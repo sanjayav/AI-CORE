@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { AnswerCanvas } from "../answer/AnswerCanvas";
 import { TypingIndicator } from "../answer/TypingIndicator";
 import { SuggestedQuestions } from "../answer/SuggestedQuestions";
-import mockAnswers from "@/data/mockAnswers.json";
+import realAnswers from "@/data/realAnswers.json";
 import { Send, ChevronDown } from "lucide-react";
 import { MistralIcon } from "../icons/MistralIcon";
 
@@ -50,13 +50,41 @@ export function AskMode() {
     setLoading(true);
 
     setTimeout(() => {
+      // Intelligently match question to answer based on keywords
       let answerData;
-      if (scope === 'library') {
-        answerData = mockAnswers.library;
-      } else if (scope === 'upload') {
-        answerData = mockAnswers.upload;
-      } else {
-        answerData = mockAnswers.combined_conflict;
+      const lowerQuery = queryText.toLowerCase();
+      
+      // Test specifications queries
+      if (lowerQuery.includes('test') && (lowerQuery.includes('spec') || lowerQuery.includes('procedure') || lowerQuery.includes('tpjlr') || lowerQuery.includes('pulse') || lowerQuery.includes('acceleration') || lowerQuery.includes('axis'))) {
+        answerData = realAnswers.test_specifications;
+      } 
+      // Material properties queries
+      else if (lowerQuery.includes('material') || lowerQuery.includes('pa6') || lowerQuery.includes('copper') || lowerQuery.includes('cu-etp') || lowerQuery.includes('aluminum') || lowerQuery.includes('acceptance criteria')) {
+        answerData = realAnswers.material_properties;
+      }
+      // BMCM queries
+      else if (lowerQuery.includes('bmcm') || lowerQuery.includes('battery management') || lowerQuery.includes('manifold') || lowerQuery.includes('housing')) {
+        answerData = realAnswers.bmcm_analysis;
+      }
+      // Recommendations queries
+      else if (lowerQuery.includes('recommend') || lowerQuery.includes('dfmea') || lowerQuery.includes('monitor') || lowerQuery.includes('clearance') || lowerQuery.includes('psd') || lowerQuery.includes('action')) {
+        answerData = realAnswers.recommendations;
+      }
+      // Pressurisation analysis
+      else if (lowerQuery.includes('pressur') || lowerQuery.includes('lid') || lowerQuery.includes('seal') || lowerQuery.includes('eped') || lowerQuery.includes('216804') || lowerQuery.includes('adhesive')) {
+        answerData = realAnswers.pressurisation_analysis;
+      }
+      // Retention plate comparison
+      else if (lowerQuery.includes('retention') || lowerQuery.includes('b227') || lowerQuery.includes('b229') || (lowerQuery.includes('compar') && lowerQuery.includes('baseline'))) {
+        answerData = realAnswers.retention_plate_comparison;
+      }
+      // Contactor carrier / shock analysis (most common)
+      else if (lowerQuery.includes('contactor') || lowerQuery.includes('busbar') || lowerQuery.includes('bem') || lowerQuery.includes('b246') || lowerQuery.includes('shock') || lowerQuery.includes('strain') || lowerQuery.includes('fix-loop')) {
+        answerData = realAnswers.shock_analysis;
+      }
+      // Default to shock analysis
+      else {
+        answerData = realAnswers.shock_analysis;
       }
 
       const aiMessage = {

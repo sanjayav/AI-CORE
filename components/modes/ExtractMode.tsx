@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Database, Download, Table as TableIcon, Code, CheckSquare, Search, Filter, AlertCircle, CheckCircle2, FileCode } from "lucide-react";
 import { useStore } from "@/lib/store";
-import mockExtract from "@/data/mockExtract.json";
+import realExtract from "@/data/realExtract.json";
 
 export function ExtractMode() {
   const { extractViewMode, setExtractViewMode } = useStore();
@@ -28,10 +28,11 @@ export function ExtractMode() {
     setCheckedItems(newChecked);
   };
 
-  const filteredData = mockExtract.data.filter(item => {
+  const filteredData = realExtract.data.filter(item => {
     const matchesSearch = searchQuery === "" || 
       item.component.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.torque.toLowerCase().includes(searchQuery.toLowerCase());
+      item.material.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.max_plastic_strain.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCritical = !showCriticalOnly || item.critical;
     return matchesSearch && matchesCritical;
   });
@@ -83,7 +84,7 @@ export function ExtractMode() {
             className="grid grid-cols-4 gap-4 mb-6"
           >
             <div className="bg-[#1A1A1A] border border-gray-800 rounded-xl p-4">
-              <div className="text-3xl font-black text-orange-400 mb-1">{mockExtract.totalRecords}</div>
+              <div className="text-3xl font-black text-orange-400 mb-1">{realExtract.totalRecords}</div>
               <div className="text-sm text-gray-400 font-medium">Total Records</div>
             </div>
             <div className="bg-[#1A1A1A] border border-gray-800 rounded-xl p-4">
@@ -91,7 +92,7 @@ export function ExtractMode() {
               <div className="text-sm text-gray-400 font-medium">Filtered Results</div>
             </div>
             <div className="bg-[#1A1A1A] border border-gray-800 rounded-xl p-4">
-              <div className="text-3xl font-black text-red-400 mb-1">{mockExtract.data.filter(d => d.critical).length}</div>
+              <div className="text-3xl font-black text-red-400 mb-1">{realExtract.data.filter(d => d.critical).length}</div>
               <div className="text-sm text-gray-400 font-medium">Critical Items</div>
             </div>
             <div className="bg-[#1A1A1A] border border-gray-800 rounded-xl p-4">
@@ -115,7 +116,7 @@ export function ExtractMode() {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search components or torque specs..."
+                  placeholder="Search components, materials, or strain values..."
                   className="w-full pl-10 pr-4 py-2 bg-[#2D2D2D] border border-gray-700 text-white placeholder-gray-500 rounded-lg text-sm focus:outline-none focus:border-orange-500 transition-colors"
                 />
               </div>
@@ -175,8 +176,9 @@ export function ExtractMode() {
                     <thead>
                       <tr className="bg-gradient-to-r from-[#0A0A0A] to-[#1A1A1A] border-b-2 border-orange-500/20">
                         <th className="px-6 py-5 text-left text-xs font-black text-orange-400 uppercase tracking-wider">Component</th>
-                        <th className="px-6 py-5 text-left text-xs font-black text-orange-400 uppercase tracking-wider">Torque Spec</th>
-                        <th className="px-6 py-5 text-left text-xs font-black text-orange-400 uppercase tracking-wider">Stage</th>
+                        <th className="px-6 py-5 text-left text-xs font-black text-orange-400 uppercase tracking-wider">Material</th>
+                        <th className="px-6 py-5 text-left text-xs font-black text-orange-400 uppercase tracking-wider">Acceptance</th>
+                        <th className="px-6 py-5 text-left text-xs font-black text-orange-400 uppercase tracking-wider">Max Strain</th>
                         <th className="px-6 py-5 text-center text-xs font-black text-orange-400 uppercase tracking-wider">Priority</th>
                         <th className="px-6 py-5 text-left text-xs font-black text-orange-400 uppercase tracking-wider">Engineering Notes</th>
                         <th className="px-6 py-5 text-center text-xs font-black text-orange-400 uppercase tracking-wider">Reference</th>
@@ -216,24 +218,31 @@ export function ExtractMode() {
                             </div>
                           </td>
 
-                          {/* Torque Specification */}
+                          {/* Material */}
+                          <td className="px-6 py-5">
+                            <span className={`text-xs font-medium ${item.critical ? "text-gray-200" : "text-gray-400"}`}>
+                              {item.material}
+                            </span>
+                          </td>
+
+                          {/* Acceptance Criteria */}
+                          <td className="px-6 py-5">
+                            <div className="inline-block px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-300 text-sm font-bold font-mono">
+                              {item.acceptance_criteria}
+                            </div>
+                          </td>
+
+                          {/* Max Plastic Strain */}
                           <td className="px-6 py-5">
                             <div className={`
                               inline-block px-4 py-2 rounded-lg font-mono text-sm font-bold
                               ${item.critical 
-                                ? "bg-orange-500/20 border border-orange-500/40 text-orange-300" 
-                                : "bg-[#2D2D2D] border border-gray-700 text-gray-300"
+                                ? "bg-red-500/20 border border-red-500/40 text-red-300" 
+                                : "bg-green-500/10 border border-green-500/30 text-green-300"
                               }
                             `}>
-                              {item.torque}
+                              {item.max_plastic_strain}
                             </div>
-                          </td>
-
-                          {/* Stage */}
-                          <td className="px-6 py-5">
-                            <span className={`text-sm font-medium ${item.critical ? "text-gray-200" : "text-gray-400"}`}>
-                              {item.stage}
-                            </span>
                           </td>
 
                           {/* Priority Badge */}
@@ -298,7 +307,7 @@ export function ExtractMode() {
                       </div>
                     </div>
                     <span className="text-gray-400">
-                      Showing <span className="font-bold text-orange-400">{filteredData.length}</span> of <span className="font-bold text-white">{mockExtract.data.length}</span> records
+                      Showing <span className="font-bold text-orange-400">{filteredData.length}</span> of <span className="font-bold text-white">{realExtract.data.length}</span> records
                     </span>
                   </div>
                 </div>
@@ -339,20 +348,25 @@ export function ExtractMode() {
                   <pre className="bg-[#0A0A0A] border-2 border-gray-800 rounded-lg p-6 overflow-x-auto text-sm shadow-inner">
                     <code className="font-mono">
                       <span className="text-gray-500">{`{`}</span>
-                      {"\n  "}<span className="text-orange-400">"query"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{mockExtract.query}"</span><span className="text-gray-500">,</span>
-                      {"\n  "}<span className="text-orange-400">"extractType"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{mockExtract.extractType}"</span><span className="text-gray-500">,</span>
+                      {"\n  "}<span className="text-orange-400">"query"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{realExtract.query}"</span><span className="text-gray-500">,</span>
+                      {"\n  "}<span className="text-orange-400">"extractType"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{realExtract.extractType}"</span><span className="text-gray-500">,</span>
                       {"\n  "}<span className="text-orange-400">"totalRecords"</span><span className="text-gray-500">:</span> <span className="text-blue-400">{filteredData.length}</span><span className="text-gray-500">,</span>
                       {"\n  "}<span className="text-orange-400">"data"</span><span className="text-gray-500">: [</span>
-                      {filteredData.map((item, idx) => (
+                      {filteredData.slice(0, 5).map((item, idx) => (
                         <span key={item.id}>
                           {"\n    "}<span className="text-gray-500">{`{`}</span>
                           {"\n      "}<span className="text-orange-400">"component"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{item.component}"</span><span className="text-gray-500">,</span>
-                          {"\n      "}<span className="text-orange-400">"torque"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{item.torque}"</span><span className="text-gray-500">,</span>
-                          {"\n      "}<span className="text-orange-400">"stage"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{item.stage}"</span><span className="text-gray-500">,</span>
+                          {"\n      "}<span className="text-orange-400">"material"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{item.material}"</span><span className="text-gray-500">,</span>
+                          {"\n      "}<span className="text-orange-400">"max_plastic_strain"</span><span className="text-gray-500">:</span> <span className="text-green-400">"{item.max_plastic_strain}"</span><span className="text-gray-500">,</span>
                           {"\n      "}<span className="text-orange-400">"critical"</span><span className="text-gray-500">:</span> <span className={item.critical ? "text-red-400" : "text-blue-400"}>{String(item.critical)}</span>
-                          {"\n    "}<span className="text-gray-500">{`}`}</span>{idx < filteredData.length - 1 ? <span className="text-gray-500">,</span> : ""}
+                          {"\n    "}<span className="text-gray-500">{`}`}</span>{idx < Math.min(filteredData.length, 5) - 1 ? <span className="text-gray-500">,</span> : ""}
                         </span>
                       ))}
+                      {filteredData.length > 5 && (
+                        <>
+                          {"\n    "}<span className="text-gray-500">...</span>
+                        </>
+                      )}
                       {"\n  "}<span className="text-gray-500">]</span>
                       {"\n"}<span className="text-gray-500">{`}`}</span>
                     </code>
@@ -508,17 +522,25 @@ export function ExtractMode() {
                             )}
                           </div>
 
-                          {/* Torque Spec */}
-                          <div className={`
-                            inline-block px-4 py-2 rounded-lg font-mono text-sm font-bold mb-3
-                            ${checkedItems.has(idx)
-                              ? "bg-gray-700/20 border border-gray-700 text-gray-500"
-                              : item.critical
-                                ? "bg-orange-500/20 border border-orange-500/40 text-orange-300"
-                                : "bg-[#2D2D2D] border border-gray-700 text-gray-300"
-                            }
-                          `}>
-                            {item.torque} • {item.stage}
+                          {/* Strain Info */}
+                          <div className="flex gap-2 mb-3 flex-wrap">
+                            <div className={`
+                              inline-block px-3 py-1.5 rounded-lg font-mono text-xs font-bold
+                              ${checkedItems.has(idx)
+                                ? "bg-gray-700/20 border border-gray-700 text-gray-500"
+                                : item.critical
+                                  ? "bg-red-500/20 border border-red-500/40 text-red-300"
+                                  : "bg-green-500/10 border border-green-500/30 text-green-300"
+                              }
+                            `}>
+                              Strain: {item.max_plastic_strain}
+                            </div>
+                            <div className="inline-block px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-bold font-mono">
+                              Target: {item.acceptance_criteria}
+                            </div>
+                          </div>
+                          <div className={`text-xs mb-2 ${checkedItems.has(idx) ? "text-gray-600" : "text-gray-500"}`}>
+                            Material: {item.material}
                           </div>
 
                           {/* Notes */}

@@ -1,0 +1,104 @@
+{
+  "categories": [
+    {
+      "name": "Critical Issues",
+      "icon": "AlertCircle",
+      "questions": [
+        "Why did the contactor carrier fail the shock test with 37.2% plastic strain?",
+        "What's causing the busbar clashing in the contactor carrier locators?",
+        "Show me all components that exceeded their acceptance criteria",
+        "What's the root cause of the contactor carrier busbar locator failure?"
+      ]
+    },
+    {
+      "name": "Test Results",
+      "icon": "TrendingUp",
+      "questions": [
+        "Which components passed the 25g shock test and which ones failed?",
+        "What were the plastic strain results for all BEM components?",
+        "Compare the X, Y, and Z axis shock results for the contactor carrier",
+        "Show me the base plate plastic strain - did it meet the 0.45% target?"
+      ]
+    },
+    {
+      "name": "Design Solutions",
+      "icon": "Edit3",
+      "questions": [
+        "How did Rev 41.1 fix-loop design improve the contactor carrier?",
+        "What design changes were made to the busbar locators?",
+        "Why was an extra adhesive patch added in the fix-loop design?",
+        "Explain the swept radius increase in the busbar locators"
+      ]
+    },
+    {
+      "name": "Test Setup",
+      "icon": "Code",
+      "questions": [
+        "What shock pulse was used - tell me the g-force and duration",
+        "How many shock pulses were applied during the complete test?",
+        "What's the difference between 25g at rig and 30g on pack?",
+        "Explain the test procedure TPJLR.14.093 requirements"
+      ]
+    },
+    {
+      "name": "Materials",
+      "icon": "Layers",
+      "questions": [
+        "What material is PA6-GF30 and why is it used for the contactor carrier?",
+        "Tell me about Cu-ETP-R240 copper used in the stamped busbars",
+        "What's the acceptance criteria for EN_AC_46000_MONO aluminum?",
+        "Compare the material properties of all BEM plastic components"
+      ]
+    },
+    {
+      "name": "BMCM Results",
+      "icon": "Cpu",
+      "questions": [
+        "Did the BMCM housing and manifold pass the shock test?",
+        "What plastic strain did the BMCM components show?",
+        "Are there any concerns with BMCM Rev 20.1 structural integrity?",
+        "Show me the BMCM manifold results - what's the safety margin?"
+      ]
+    },
+    {
+      "name": "Assembly Details",
+      "icon": "Package",
+      "questions": [
+        "What's the complete BEM assembly revision for this analysis?",
+        "Which frame and cell pack revisions were tested?",
+        "How does the test rig fixture attach to the battery pack?",
+        "Show me the CAD revision numbers for all major assemblies"
+      ]
+    },
+    {
+      "name": "Next Steps",
+      "icon": "GitCompare",
+      "questions": [
+        "What do I need to monitor during the physical shock test?",
+        "What clearances need to be verified before production?",
+        "Should we update the dFMEA for busbar type 11 clashing risk?",
+        "What PSD analysis is needed for the fix-loop designs?"
+      ]
+    },
+    {
+      "name": "Quick Facts",
+      "icon": "Sparkles",
+      "questions": [
+        "Give me the executive summary of this shock analysis",
+        "What are the top 3 critical findings from this test?",
+        "Which analyst performed this work and when?",
+        "List all components with their pass/fail status"
+      ]
+    },
+    {
+      "name": "Detailed Analysis",
+      "icon": "AlertTriangle",
+      "questions": [
+        "Walk me through the Z-shock results for the base plate",
+        "Explain why stamped busbars only showed 0.7% strain",
+        "What's the stress distribution in the connector tower?",
+        "Show me the detailed plastic strain contour plots locations"
+      ]
+    }
+  ]
+}

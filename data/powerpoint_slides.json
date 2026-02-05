@@ -1,0 +1,1235 @@
+{
+  "presentation_info": {
+    "author": "Alan Robertson (arobert1)",
+    "subject": "",
+    "title": "PowerPoint Presentation"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "text_blocks": [
+        {
+          "text": "EP CAE CHAPTER – Technical Report for Virtual DV Testing\nProject: X6060A | Report No: 25235-edd216804-02 | Author: Nagesh.G (nguruvar) | Ref: Ref: EPESS-63519\nPhase: EMA LR 26MY IPB | Reviewed: E. Axcell (eaxcell) | AIMS Number: AIMS-21325\nCirculation: CO: P. Cercel (pcercel1), PO: M. Seymour (mseymou1), SME: S. Grange (sgrange) | Concurred: A. Robertson (arobert1) | Date: 13/05/2025\nReport Title: EMA LR 26MY IPB pack lid and seal pressurisation analysis | Page: 1 of 22",
+          "type": "Table"
+        },
+        {
+          "text": "Summary and Conclusions:\nAim: Assess EMA LR IPB pack lid performance against emergency pack pressurisation event conditions: TPJLR-14-105.\nMethodology: A static pressurisation analysis was carried out on the pack lid. A uniform pressure of 400 mbar is applied to the pack lid to align with CFD results.",
+          "type": "Text"
+        },
+        {
+          "text": "Step | Component | Metric | Target | Result\nOver Pressure | Pack Lid | Plastic strain, PEEQ % | <8.0 | 7.28\nMain Seal | Damage | <0.9 | 0.02\nAdhesive | Damage | <0.9 | 0.24",
+          "type": "Table"
+        },
+        {
+          "text": "Pack lid: maximum plastic equivalent strain on the pack lid is 7.28% which meets the target of 8.0%. Criteria satisfied\nAt 500 mbar pressure the pack lid is exhibiting 8.17% of plastic equivalent strain (Appendix)\nSeal and adhesive: max damage initiation value in the main seal and adhesive is 0.24 against a target of 0.9. Criteria satisfied.\n\nPack lid, adhesive and seal meet emergency pack pressurisation requirements.\n\nRecommendations:\nProvide min/max compressed seal and adhesive height and width from build/tear down.\nMonitor ballooning around adhesive fixing points on physical test. Inspect adhesive during tear-down to look for evidence of cohesive failure or debonding. \nMaterial mechanical properties in locations of largest deformation during pressing require comparison and confirmation against material standard.",
+          "type": "Text"
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "text_blocks": [
+        {
+          "text": "Analysis completed to assess performance against: TPJLR-14-105 Emergency Pressure Equalisation Device operating pressure (venting). Deviations: Pack lid is attached to sealing plate.",
+          "type": "Text"
+        },
+        {
+          "text": "Pack lid",
+          "type": "Text"
+        },
+        {
+          "text": "Component | Part Name | Revision\nPack Lid | T9U3-10D654-AA5-INS-01 | 2.1\nMain Seal | T9U3-M00039-B-INS-01 | 12.1\nAdhesive - Lid to frame | T9U3-M00039-C-INS-01 | 11.1\nSealing Plate | Mesh Dummy | N/A\nSupport Beam | T9U3-10J700-A-INS-01 | 18.1\nPack Fixings M6 | W782113-S-INS-01 | 2.1\nCross Members | T9U3-10U324-A | 2.1",
+          "type": "Table"
+        },
+        {
+          "text": "Modelling:\nPacklid, cross member frames and blanking covers are modelled using linear shell elements. \nLid shell thickness: Thickness map (see appendix)\nSeals and adhesives are modelled using cohesive hexahedral elements  (COH3D8)       For seal path modelling see Appendix.\nBolts and packlid fixings are modelled using hexa elements (C3D8)\nSealing plate is modelled using hexa, penta elements (C3D6, C3D8)\nCrossmembers are modelled using first order tetra elements(C3D4)",
+          "type": "Text"
+        },
+        {
+          "text": "Contacts: \nFriction contact, µ=0.15 \nPack lid to sealing plate\nBolthead to pack lid\nSupport beam to crossmember\npack lid to support beam\nCross member to packlid",
+          "type": "Text"
+        },
+        {
+          "text": "Tied contact\nCross member to sealing plate\nPack lid to blanking covers\nAdhesive contacts\nMain seal contacts\nStiffener plate to pack lid\nFixing threads to sealing plate and cross members",
+          "type": "Text"
+        },
+        {
+          "text": "Software: Listed in Appendix",
+          "type": "Text"
+        },
+        {
+          "text": "Blanking covers",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "text_blocks": [
+        {
+          "text": "All material data shown in table at room temperature unless otherwise stated. Adhesive and seal are modelled using cohesive traction separation models, details are shown in Appendix..",
+          "type": "Text"
+        },
+        {
+          "text": "NGD: Pack_LID_seal_NGD_packR4p1_04March25.xlsx",
+          "type": "Text"
+        },
+        {
+          "text": ": Blue bars represent the cell value as a proportion of the maximum value in the column",
+          "type": "Text"
+        },
+        {
+          "text": "**: Multiple instances of this part exist which have been collapsed into a single item in the table. # represents the numerical key of each instance",
+          "type": "Text"
+        },
+        {
+          "text": "Component | Test condition | Details | Target\nPack lid | Emergency Pressure Equalisation Device operating pressure | Single event, pack not used post venting | <8 % PEEQ\nAdhesive | Emergency Pressure Equalisation Device operating pressure | Single event, pack not used post venting | <0.9 damage initiation criteria",
+          "type": "Table"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "text_blocks": [
+        {
+          "text": "The Lid Seal and Adhesives are modelled using a traction-separation material model, as provided by Henkel, assuming a strain rate of 1.",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 5,
+      "text_blocks": [
+        {
+          "text": "Analysis consists of the following steps:",
+          "type": "Text"
+        },
+        {
+          "text": "Step No | Step | Bolt Load | Global Temperature | Pressure\n0 | Initial | - | 20°C | -\n1 | Bolt displacement | 0.01 mm\n2 | Bolt Load | M6 bolt: 6500 N (min)/13000N (max)\nM8 bolt: 10000N (min) /20000N (max)\nM8 bolt: 12000N (min) /24000N (max)\nM10 bolt: 21000N (min)/ 42000N (max) | 20°C | -\n3 | Bolt Fix | Fix to current length (FCL) | 20°C | -\n4 | Internal pressure | Fix to current length (FCL) | 20°C | 0.04 MPa",
+          "type": "Table"
+        },
+        {
+          "text": "Table 1: emergency pack pressurisation event load cases",
+          "type": "Text"
+        },
+        {
+          "text": "Underneath of sealing plate fixed in all DoF’s",
+          "type": "Text"
+        },
+        {
+          "text": "Internal pressure applied to pack lid and sealing plate",
+          "type": "Text"
+        },
+        {
+          "text": "Min bolt load: sealing\nMax bolt load: durability",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 Boundary Conditions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "text_blocks": [
+        {
+          "text": "A critical node is defined as any node that exceeds the defined strength limit for the component.\nWhere the maximum plastic equivalent strain exceeds 50% of this figure, the result is reported for information.",
+          "type": "Text"
+        },
+        {
+          "text": "ODB | Step: 04_Over_Pressure\nComponent /\nNumber of critical nodes...\nRestart_edd216804_b300_EMA_LR_packlid_maxPL_Master_400mbar | Pack_lid:\n 0, max. PEEQ 7.3 %",
+          "type": "Table"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "text_blocks": [
+        {
+          "text": "Go To Main Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "A critical node is defined as any node that exceeds the defined strength limit for the component.\nWhere the maximum plastic equivalent strain exceeds 50% of this figure, the result is reported for information.",
+          "type": "Text"
+        },
+        {
+          "text": "Step | Component | Target [%] | Node | PEEQ [%] | Max. PEEQ [%]\n(Component)\n04_Over_Pressure | Pack_lid | 8 | 97683 | 7.28 | 7.28",
+          "type": "Table"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 8,
+      "text_blocks": [
+        {
+          "text": "Go To Main Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "A critical node is defined as any node that exceeds the defined strength limit for the component.\nWhere the maximum plastic equivalent strain exceeds 50% of this figure, the result is reported for information.",
+          "type": "Text"
+        },
+        {
+          "text": "Step | Component | Metric | Target | Result\nOver Pressure | Main Seal | Damage | <0.9 | 0.02\nAdhesive | Damage | <0.9 | 0.29",
+          "type": "Table"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "text_blocks": [
+        {
+          "text": "ODB file: 3.0_Programmes/Batteries/EMA_BEV/26MY/7-IPB/3-PackLevel/200101-Pressurisation/216804-PackLid/b300/Abaqus_res_009/Restart_edd216804_b300_EMA_LR_packlid_maxPL_Master_400mbar_ov2023.odb\nStep: 04_Over_Pressure\nComponent: Pack_lid",
+          "type": "Text"
+        },
+        {
+          "text": "Node Details:\nComponent: Pack_lid\nLabel: 97683\nPEEQ: 7.28 %\nCoordinates: [3952.11 288.15 1270.5]\nTarget:  8 %",
+          "type": "Text"
+        },
+        {
+          "text": "Go To ODB Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 10,
+      "text_blocks": [
+        {
+          "text": "ODB file: 3.0_Programmes/Batteries/EMA_BEV/26MY/7-IPB/3-PackLevel/200101-Pressurisation/216804-PackLid/b300/Abaqus_res_009/Restart_edd216804_b300_EMA_LR_packlid_maxPL_Master_400mbar_ov2023.odb\nStep: 04_Over_Pressure\nComponent: Pack_lid",
+          "type": "Text"
+        },
+        {
+          "text": "Component target = 8 %. Max. plastic equivalent strain in component is 7.28 %.\n[Note: Contour plots below may include local contact stresses which can be ignored. Any risk areas are shown in Section 1 of the report].",
+          "type": "Text"
+        },
+        {
+          "text": "Iso View",
+          "type": "Text"
+        },
+        {
+          "text": "Pack_lid, isometric view",
+          "type": "Text"
+        },
+        {
+          "text": "Go To ODB Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 11,
+      "text_blocks": [
+        {
+          "text": "ODB file: 3.0_Programmes/Batteries/EMA_BEV/26MY/7-IPB/3-PackLevel/200101-Pressurisation/216804-PackLid/b300/Abaqus_res_009/Restart_edd216804_b300_EMA_LR_packlid_maxPL_Master_400mbar_ov2023.odb\nStep: 04_Over_Pressure\nComponent: Pack_lid",
+          "type": "Text"
+        },
+        {
+          "text": "Component target = 8 %. Max. plastic equivalent strain in component is 7.28 %.\n[Note: Contour plots below may include local contact stresses which can be ignored. Any risk areas are shown in Section 1 of the report].",
+          "type": "Text"
+        },
+        {
+          "text": "PlusZ and MinusZ View",
+          "type": "Text"
+        },
+        {
+          "text": "Pack_lid PlusZ View",
+          "type": "Text"
+        },
+        {
+          "text": "Pack_lid MinusZ View",
+          "type": "Text"
+        },
+        {
+          "text": "Go To ODB Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 12,
+      "text_blocks": [
+        {
+          "text": "Go To ODB Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "Max damage : 0.02",
+          "type": "Text"
+        },
+        {
+          "text": "ODB file: 3.0_Programmes/Batteries/EMA_BEV/26MY/7-IPB/3-PackLevel/200101-Pressurisation/216804-PackLid/b300/Abaqus_res_010/Restart_edd216804_b300_EMA_LR_packlid_minPL_Master_400mbar_ov2023.odb\nStep: 04_Over_Pressure\nComponent: Main seal",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 13,
+      "text_blocks": [
+        {
+          "text": "Go To ODB Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "Damage : 0.29",
+          "type": "Text"
+        },
+        {
+          "text": "Damage : 0.20",
+          "type": "Text"
+        },
+        {
+          "text": "Location-1",
+          "type": "Text"
+        },
+        {
+          "text": "Location-2",
+          "type": "Text"
+        },
+        {
+          "text": "Location-1",
+          "type": "Text"
+        },
+        {
+          "text": "Location-2",
+          "type": "Text"
+        },
+        {
+          "text": "Higher adhesive damage are seeing at location-2 compared to location-1, even though the deformation is more near location-1.This is due to the geometrical stiffness of the lid (lid profile is different at loc-1 and loc-2)",
+          "type": "Text"
+        },
+        {
+          "text": "ODB file: 3.0_Programmes/Batteries/EMA_BEV/26MY/7-IPB/3-PackLevel/200101-Pressurisation/216804-PackLid/b300/Abaqus_res_010/Restart_edd216804_b300_EMA_LR_packlid_minPL_Master_400mbar_ov2023.odb\nStep: 04_Over_Pressure\nComponent: Adhesive",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 14,
+      "text_blocks": [
+        {
+          "text": "Conclusions:",
+          "type": "Text"
+        },
+        {
+          "text": "Step | Component | Metric | Target | Result\nOver Pressure | Pack Lid | Plastic strain, PEEQ % | <8.0 | 7.28\nMain Seal | Damage | <0.9 | 0.02\nAdhesive | Damage | <0.9 | 0.24",
+          "type": "Table"
+        },
+        {
+          "text": "Pack lid: maximum plastic equivalent strain on the pack lid is 7.28% which meets the target of 8.0%. Criteria satisfied\nAt 500 mbar pressure the pack lid is exhibiting 8.17% of plastic equivalent strain (Appendix)\nSeal and adhesive: max damage initiation value in the main seal and adhesive is 0.24 against a target of 0.9. Criteria satisfied.\n\nPack lid, adhesive and seal meet emergency pack pressurisation requirements.\n\nRecommendations:\nProvide min/max compressed seal and adhesive height and width from build/tear down.\nMonitor ballooning around adhesive fixing points on physical test. Inspect adhesive during tear-down to look for evidence of cohesive failure or debonding. \nMaterial mechanical properties in locations of largest deformation during pressing require comparison and confirmation against material standard.",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions and Recommendations",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 15,
+      "text_blocks": [
+        {
+          "text": "Packlid thickness mapping (Thinning): \nRef file: SIM019 T9U3-10S770-A-PIA-01 Rev22.1_Layers-5.dyn",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 16,
+      "text_blocks": [
+        {
+          "text": "ODB file: 3.0_Programmes/Batteries/EMA_BEV/26MY/7-IPB/3-PackLevel/200101-Pressurisation/216804-PackLid/b300/Abaqus_res_009/Restart_edd216804_b300_EMA_LR_packlid_maxPL_Master_400mbar_ov2023.odb Step: 04_Over_Pressure\nComponent: Pack_lid",
+          "type": "Text"
+        },
+        {
+          "text": "Lid with adhesive\nPressure applied | Displacement\nMPa | mm\n0.04 | 29.14",
+          "type": "Table"
+        },
+        {
+          "text": "Lid with adhesive\nPressure applied | Displacement\nMPa | mm\n0.04 | 24.24",
+          "type": "Table"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 17,
+      "text_blocks": [
+        {
+          "text": "ODB file: 3.0_Programmes/Batteries/EMA_BEV/26MY/7-IPB/3-PackLevel/200101-Pressurisation/216804-PackLid/b300/Abaqus_res_007/Restart_edd216804_b300_EMA_LR_packlid_maxPL_Master_500mbar_ov2023.odb\nStep: 04_Over_Pressure\nComponent: Pack_lid",
+          "type": "Text"
+        },
+        {
+          "text": "Go To ODB Overview Table",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 18,
+      "text_blocks": [
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 19,
+      "text_blocks": [
+        {
+          "text": "Process | Software | Version\nPre Processor | Hypermesh | 2023\nSolver | Abaqus | 2023\nPost Processor | Abaqus CAE\nMaxMinExtraction | 2023\n2.1",
+          "type": "Table"
+        },
+        {
+          "text": "Analysed odb(s) | K:/.../b300/Abaqus_res_009/Restart_edd216804_b300_EMA_LR_packlid_maxPL_Master_400mbar_ov2023.odb\nK:/.../b300/Abaqus_res_010/Restart_edd216804_b300_EMA_LR_packlid_minPL_Master_400mbar_ov2023.odb\nAnalysed field output | PEEQ\nDMICRTMAXVAL\nNumber of element layers\nremoved from contact surfaces | 0\nResult averaging options | Include region boundaries: True\nInclude feature boundaries: False",
+          "type": "Table"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 20,
+      "text_blocks": [
+        {
+          "text": "Program: | Analyst: | Date: | AIMS : N/A | Attribute :\nAffected GenCols :\nModel: IPB Model\n\n \n\n\n\n\n\n\n\n\nBoundary Conditions: \nOutlet Valve Pressure : 0 Pa\nInlet Air Vent Mass flow / Temperature : AVL test data\nInitial Temperature : 27°C\nObservation :\nMaximum Lid pressure, criteria is not meeting the target value.\nEPED Exit temperatures are meeting the target and the temperature are below the limit. Maximum EPED Exit Temperature is observed in the CS5_VP02_Front case. \nObserved, There is no much difference in max Lid pressure and EPED temperature between the EMA-UR and EMA-LR model.\nEMA IPB test 16 result recorded pressure of ~44 kpa with sealed lid.",
+          "type": "Table"
+        },
+        {
+          "text": "EMA UR and LR",
+          "type": "Text"
+        },
+        {
+          "text": "Arun Patil",
+          "type": "Text"
+        },
+        {
+          "text": "09/10/24",
+          "type": "Text"
+        },
+        {
+          "text": "Safety / Durability",
+          "type": "Text"
+        },
+        {
+          "text": "Frame, EPED, Lid, Stringer",
+          "type": "Text"
+        },
+        {
+          "text": "Problem Definition: To Evaluate the flow of venting gas Inside the pack on multiple venting locations, to assess its impact on the lid pressure and EPED Exit gas temperature.",
+          "type": "Text"
+        },
+        {
+          "text": "1124°C",
+          "type": "Text"
+        },
+        {
+          "text": "Results:",
+          "type": "Text"
+        },
+        {
+          "text": "Vent",
+          "type": "Text"
+        },
+        {
+          "text": "Multiple Vent Locations",
+          "type": "Text"
+        },
+        {
+          "text": "CS-1",
+          "type": "Text"
+        },
+        {
+          "text": "CS-2",
+          "type": "Text"
+        },
+        {
+          "text": "CS-3",
+          "type": "Text"
+        },
+        {
+          "text": "CS-4",
+          "type": "Text"
+        },
+        {
+          "text": "CS-5",
+          "type": "Text"
+        },
+        {
+          "text": "EPED Valve",
+          "type": "Text"
+        },
+        {
+          "text": "EPED",
+          "type": "Text"
+        },
+        {
+          "text": "Deflector",
+          "type": "Text"
+        },
+        {
+          "text": "Vent Location | Max Lid Pressure (kPa) | EPED Exit Temp (C)\nEMA-UR | EMA-LR | EMA-UR | EMA-LR\nTarget | 25 | 500\nCS1-VP01-Front | 33.4 | 34.7 | 64.82 | 56.9\nCS5_VP02_Front | 39.4 | 39.9 | 206.8 | 232\nCS1_VP03_Front | 33.0 | 34.4 | 83.32 | 66.1\nCS3_VP4_Front | 31.3 | 33.8 | 126.7 | 112.1\nCS4_VP05_Rear | 33.8 | 37.1 | 192.2 | 189.3\nCS5_VP06_Rear | 34.1 | 32.1 | 137.2 | 187.5",
+          "type": "Table"
+        },
+        {
+          "text": "EMA-UR",
+          "type": "Text"
+        },
+        {
+          "text": "EMA-LR",
+          "type": "Text"
+        },
+        {
+          "text": "Valve",
+          "type": "Text"
+        },
+        {
+          "text": "Valve",
+          "type": "Text"
+        },
+        {
+          "text": "Design Changes | Values (mm)\nGap B/w Lid and CP-1,2,3,4 | 5.4\nGap B/w Lid and CP-5 | 7.4",
+          "type": "Table"
+        },
+        {
+          "text": "Design Changes | Values (mm)\nGap B/w Lid and CP-1,2,3,4 | 5.4\nGap B/w Lid and CP-5 | 7.4",
+          "type": "Table"
+        },
+        {
+          "text": "Max pressure, 40kPa (400mbar)",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 21,
+      "text_blocks": [
+        {
+          "text": "CS01-VP01-Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS01-VP03-Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS04_VP05_Rear",
+          "type": "Text"
+        },
+        {
+          "text": "CS05-VP02-Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS03_VP04_Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS05_VP06_Rear",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "EMA Battery IPB Design Analysis Pack Venting – EMA-LR Maximum LID Pressure @ 0.5s",
+          "type": "Text"
+        }
+      ]
+    },
+    {
+      "slide_number": 22,
+      "text_blocks": [
+        {
+          "text": "EMA Battery IPB Design Analysis Pack Venting – EMA-UR Maximum LID Pressure @ 0.5s",
+          "type": "Text"
+        },
+        {
+          "text": "CS01-VP01-Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS01-VP03-Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS04_VP05_Rear",
+          "type": "Text"
+        },
+        {
+          "text": "CS05-VP02-Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS03_VP04_Front",
+          "type": "Text"
+        },
+        {
+          "text": "CS05_VP06_Rear",
+          "type": "Text"
+        },
+        {
+          "text": "1.1 Modelling",
+          "type": "Header"
+        },
+        {
+          "text": "1.3 BCs",
+          "type": "Header"
+        },
+        {
+          "text": "1.2 Materials",
+          "type": "Header"
+        },
+        {
+          "text": "2.0 Summary",
+          "type": "Header"
+        },
+        {
+          "text": "3.0 Results",
+          "type": "Header"
+        },
+        {
+          "text": "4.0 Conclusions",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        },
+        {
+          "text": "5.0 Appendix",
+          "type": "Header"
+        }
+      ]
+    }
+  ],
+  "total_characters": 14254,
+  "total_slides": 22,
+  "total_text_blocks": 278,
+  "total_words": 2098
+}

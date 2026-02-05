@@ -1,23 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Wrench, Sparkles, GitCompare } from "lucide-react";
-import mockSuggestions from "@/data/mockSuggestions.json";
+import { 
+  Code, Wrench, Sparkles, GitCompare, AlertCircle, Layers, 
+  Cpu, TrendingUp, Edit3, Package, AlertTriangle 
+} from "lucide-react";
+import realSuggestions from "@/data/realSuggestions.json";
 
 interface SuggestedQuestionsProps {
   onSelect: (question: string) => void;
 }
 
 const categoryIcons: { [key: string]: any } = {
-  "Specifications": Code,
-  "Maintenance": Wrench,
-  "Diagnostics": Sparkles,
-  "Comparison": GitCompare,
+  "Critical Issues": AlertCircle,
+  "Test Results": TrendingUp,
+  "Design Solutions": Edit3,
+  "Test Setup": Code,
+  "Materials": Layers,
+  "BMCM Results": Cpu,
+  "Assembly Details": Package,
+  "Next Steps": GitCompare,
+  "Quick Facts": Sparkles,
+  "Detailed Analysis": AlertTriangle,
 };
 
 export function SuggestedQuestions({ onSelect }: SuggestedQuestionsProps) {
   // Flatten questions from all categories and take first 4
-  const allQuestions = mockSuggestions.categories.flatMap((category) =>
+  const allQuestions = realSuggestions.categories.flatMap((category) =>
     category.questions.map((q) => ({
       question: q,
       categoryName: category.name,

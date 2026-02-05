@@ -1,0 +1,242 @@
+{
+  "presentation_info": {
+    "author": "Shilling, Ian (I.R.)",
+    "subject": "",
+    "title": "PowerPoint Presentation"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "text_blocks": [
+        {
+          "text": "Aim: A shock analysis was carried out to investigate the structural performance of the BEM LDI Rev 12.1 and BMCM Rev 20.1 components to dynamic shock events.\n\nMethodology: An explicit dynamic analysis using a 25g (Z & X axis) and 20g (Y axis) half sine shock pulse over 6.0 ms was applied to the model with the test rig fixture to replicate physical test TPJLR.14.093.\n \nResults Summary:\n\n\n\n\n\n\n\n\n\n\n\n\nConclusions:\nContactor carrier busbar locators have high plastic strains due to clashing of the busbar in shock loading. In the fix-loop studies, the design revision of 41.1 is improved by increasing swept radius in the busbar locators and reducing the busbar movement with adding an extra adhesive patch. The remained peak stresses in the busbar locators are localised and considered as a low risk of failure without effecting the integrity of the part. \n     Please refer: Edd256000_EMA_UR_BEM_Internals_Shock_Analysis_Report_b211_26112024.pdf\nAll the other BEM and BMCM components are satisfying the pass condition for shock loading. The plastic strain values are within the targets.\n\nRecommendations:\nEnsure initial and dynamic clearances for the busbar covers to minimize the risk of interaction with the other parts. \nReview the dFMEA on the risk of clashing conditions for busbar type 11 to contactor carrier.\nMonitor closely the interaction between contactor carrier and the busbar type 11 during physical test for any evidence of failure.\nPlease follow-up the PSD results for the fix-loop designs of contactor carrier and connector tower.",
+          "type": "Header"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Title"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        },
+        {
+          "text": "Components | Material | Material Acceptance Criteria | Max. Plastic Strain (%)\nb246\nX-Neg | Y-Pos | Z-Pos\nT9U3-10D760-A-INS-01_CONTACTOR_CARRIER_BEM_REV39P1 | PA6-GF30_Akromid_B28_GF30_FR_V1_cond | 1.60% | >3.80% | >3.80% | >3.80%\nT9U3-10F696-A-PIA-01_BASE_PLATE_BATTERY_REV22P1 | EN_AC_46000_MONO | 0.45% | 0.30% | 0.10% | 0.30%\nT9U3-12A794-A-INS-01_BUSBAR_CARRIER_BEM_REV11P0 | PA6-GF30_Akromid_B28_GF30_FR_V1_cond | 1.60% | 0.80% | 0.40% | 1.10%\nT9U3-18E310-A-PIA-01_CONNECTOR_TOWER_REV10P1 | PA6-GF30_Akromid_B28_GF30_FR_V1_cond | 1.60% | 0.30% | 0.10% | 0.30%\nT9U3-10S722-A-PIA-01_STAMPED_BUSBAR_REV12P1 | Cu-ETP-R240 | 4.00% | 0.20% | 0.20% | 0.70%",
+          "type": "Table"
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "text_blocks": [
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "CAD & Modelling",
+          "type": "Text"
+        },
+        {
+          "text": "Assembly | Assembly Number | Revision\nBEM | T9U3-10D780-A-INS-01_BATTERY_ELECTRIC_MODULE_R12p1 | 12.1\nFRAME | T9U3-10F662-A-INS-01_FRAME_Rev39p1 | 39.1\nCELL PACK | T9U3-140308-A-INS-02_CELL_STACK_Rev11p1 | 11.1\nBMCM | S9T3-14A791-A-INS-01 - BMCM - D Sample - Rev 20.1 | 20.1",
+          "type": "Table"
+        },
+        {
+          "text": "Battery pack with rig fixture",
+          "type": "Text"
+        },
+        {
+          "text": "BEM and Frame",
+          "type": "Text"
+        },
+        {
+          "text": "BMCM",
+          "type": "Text"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "text_blocks": [
+        {
+          "text": "Nominal Pulse\n          Limits of tolerance\nA – Peak acceleration of nominal pulse\nD – Duration of nominal pulse",
+          "type": "Text"
+        },
+        {
+          "text": "Analysis is carried out to replicate TPJLR.00.047 testing procedure consisting of a half sine-wave pulse\nDeviations from procedure: 25g applied at rig to achieve 30g on pack. \n\nPeak Acceleration: 25 g (X and Z axis), 20 g (Y axis) \nPulse Duration: 6.0 ms \nTest Duration per Axis: 20 pulses in each axis direction (40 pulses in total) \nTotal Test Duration: 120 pulses (3 x 40 pulses per axis)",
+          "type": "Text"
+        },
+        {
+          "text": "For analysis purposes, the shock is conducted by attachment to a rig fixture via the pack fixings. \n\nThe test requirement states: \nOn completion of the test or test program the sample shall be free from cracking, permanent deformation and/or any other form of breakage/fracture. \n\nFor analysis, this is interpreted as any part that exceeds half of the strain at break, based on the number of cycles to be run. Plastic deformation that does not exceed this value is recorded for reference.",
+          "type": "Text"
+        },
+        {
+          "text": "Mechanical Shock Durability Test Requirement",
+          "type": "Text"
+        },
+        {
+          "text": "Pulse Input Profile",
+          "type": "Text"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "text_blocks": [
+        {
+          "text": "Results Summary",
+          "type": "Text"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 5,
+      "text_blocks": [
+        {
+          "text": "Z-Shock - Plastic Strain Results of BEM Base Plate",
+          "type": "Text"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Component | Material | 1/2 Failure Strain (%) | UTS & Proof Stress (MPa) | Max. Plastic Strain (%)\nBase Plate | EN_AC_46000_Mono_V1 | 0.45% | 240 MPa (UTS)   \n140 MPa (Yield) | 0.3%",
+          "type": "Table"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "text_blocks": [
+        {
+          "text": "Z-Shock - Plastic Strain & Stress Results of Contactor carrier",
+          "type": "Header"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        },
+        {
+          "text": "Component | Material | 1/2 Failure Strain (%) | Max. Plastic Strain (%)\nCONTACTOR CARRIER | PA6-GF30_Akromid_B28_GF30_FR_V1 | 1.6% | 37.2%",
+          "type": "Table"
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "text_blocks": [
+        {
+          "text": "Z-Shock - Plastic Strain Results of Contactor carrier",
+          "type": "Header"
+        },
+        {
+          "text": "Component | Material | 1/2 Failure Strain (%) | Max. Plastic Strain (%)\nCONTACTOR CARRIER | PA6-GF30_Akromid_B28_GF30_FR_V1 | 1.6% | 37.2%",
+          "type": "Table"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Location of the adhesive tapes to contactor carrier",
+          "type": "Text"
+        },
+        {
+          "text": "Part Name | Part Number | Material | Revision\nT9U3-10D760-A-INS-01_CONTACTOR_CARRIER_BEM_REV41P1 | JLR_6529188_R3 | EN_AC_46000_Mono_V1 | 41.1",
+          "type": "Table"
+        },
+        {
+          "text": "Fix-loop results of contactor carrier in EMA UR",
+          "type": "Text"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 8,
+      "text_blocks": [
+        {
+          "text": "Z-Shock - Plastic Strain Results of Busbars",
+          "type": "Header"
+        },
+        {
+          "text": "Component | Material | 1/2 Failure Strain (%) | Max. Plastic Strain (%)\nBusbars | Cu-ETP-R420 | 4.0% | 2.0%",
+          "type": "Table"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "text_blocks": [
+        {
+          "text": "Z-Shock - Plastic Strain Results of BMCM Housing",
+          "type": "Header"
+        },
+        {
+          "text": "EMA LR IPB2 BEM Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Component | Material | 1/2 Failure Strain (%) | Max. Plastic Strain (%)\nBMCM Housing | EN AC 44300 | 0.5% | 0.4%",
+          "type": "Table"
+        },
+        {
+          "text": "Z-Shock - Plastic Strain Results of BMCM Manifold",
+          "type": "Text"
+        },
+        {
+          "text": "Component | Material | 1/2 Failure Strain (%) | Max. Plastic Strain (%)\nBMCM Manifold | AW3003-O | 12.0% | 0.3%",
+          "type": "Table"
+        },
+        {
+          "text": "Edd231804\\b246 EPESS-50028 | Analyst: C. Gowda (cgowda) | Lead Analyst: O. Akyol (oakyol) | CL: S. Sever (ssever) | 13/12/2024",
+          "type": "Header"
+        }
+      ]
+    }
+  ],
+  "total_characters": 6458,
+  "total_slides": 9,
+  "total_text_blocks": 46,
+  "total_words": 1008
+}

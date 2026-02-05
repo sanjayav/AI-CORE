@@ -1,0 +1,313 @@
+{
+  "query": "Extract all component stress and strain analysis results from EMA battery pack analyses",
+  "extractType": "structural_analysis_results",
+  "totalRecords": 18,
+  "data": [
+    {
+      "id": "comp-1",
+      "component": "Contactor Carrier BEM (Rev39P1)",
+      "material": "PA6-GF30_Akromid_B28_GF30_FR_V1",
+      "acceptance_criteria": "1.60%",
+      "max_plastic_strain": ">3.80% (ALL AXES)",
+      "test_axis": "X-Neg, Y-Pos, Z-Pos",
+      "critical": true,
+      "notes": "CRITICAL FAILURE - Exceeds acceptance criteria in all axes due to busbar clashing",
+      "citations": [
+        {
+          "docId": "edd231804_b246",
+          "page": 1,
+          "section": "Results Summary"
+        }
+      ]
+    },
+    {
+      "id": "comp-2",
+      "component": "Base Plate Battery (Rev22P1)",
+      "material": "EN_AC_46000_MONO",
+      "acceptance_criteria": "0.45%",
+      "max_plastic_strain": "0.30%",
+      "test_axis": "Z-Pos",
+      "critical": false,
+      "notes": "Within acceptance criteria - 240 MPa UTS, 140 MPa Yield",
+      "citations": [
+        {
+          "docId": "edd231804_b246",
+          "page": 5,
+          "section": "Base Plate Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-3",
+      "component": "Busbar Carrier BEM (Rev11P0)",
+      "material": "PA6-GF30_Akromid_B28_GF30_FR_V1",
+      "acceptance_criteria": "1.60%",
+      "max_plastic_strain": "1.10%",
+      "test_axis": "Z-Pos",
+      "critical": false,
+      "notes": "Within limits - satisfactory performance",
+      "citations": [
+        {
+          "docId": "edd231804_b246",
+          "page": 1,
+          "section": "Results Summary"
+        }
+      ]
+    },
+    {
+      "id": "comp-4",
+      "component": "Connector Tower (Rev10P1)",
+      "material": "PA6-GF30_Akromid_B28_GF30_FR_V1",
+      "acceptance_criteria": "1.60%",
+      "max_plastic_strain": "0.30%",
+      "test_axis": "Z-Pos",
+      "critical": false,
+      "notes": "Well within acceptance criteria",
+      "citations": [
+        {
+          "docId": "edd231804_b246",
+          "page": 1,
+          "section": "Results Summary"
+        }
+      ]
+    },
+    {
+      "id": "comp-5",
+      "component": "Stamped Busbar (Rev12P1)",
+      "material": "Cu-ETP-R240",
+      "acceptance_criteria": "4.00%",
+      "max_plastic_strain": "0.70%",
+      "test_axis": "Z-Pos",
+      "critical": false,
+      "notes": "Copper busbar - satisfactory performance, well below 4% target",
+      "citations": [
+        {
+          "docId": "edd231804_b246",
+          "page": 8,
+          "section": "Busbar Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-6",
+      "component": "Pack Lid (T9U3-10D654-AA5)",
+      "material": "Aluminum Sheet (NG5754)",
+      "acceptance_criteria": "8.00%",
+      "max_plastic_strain": "7.28%",
+      "test_axis": "Pressurization",
+      "critical": true,
+      "notes": "NEAR LIMIT - 7.28% strain at node 97683, meets 8% target with minimal margin",
+      "citations": [
+        {
+          "docId": "edd216804_25235",
+          "page": 9,
+          "section": "Pack Lid Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-7",
+      "component": "Upper Retention Plate (b227)",
+      "material": "6111T4",
+      "acceptance_criteria": "8.9% (1/2 FS)",
+      "max_plastic_strain": "2.00%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "Baseline design - satisfactory with good safety margin",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 4,
+          "section": "Retention Plate Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-8",
+      "component": "Upper Retention Plate (b229)",
+      "material": "6111T4",
+      "acceptance_criteria": "8.9% (1/2 FS)",
+      "max_plastic_strain": "2.00%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "Proposed design - unchanged from baseline, Type-1 replacement successful",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 4,
+          "section": "Retention Plate Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-9",
+      "component": "Battery Lid (b227 Baseline)",
+      "material": "NG5754 2.5% (IARC 09/06)",
+      "acceptance_criteria": "12.5% (1/2 FS)",
+      "max_plastic_strain": "2.90%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "249 MPa UTS, 130 MPa Yield - baseline performance",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 5,
+          "section": "Lid Strain Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-10",
+      "component": "Battery Lid (b229 Proposed)",
+      "material": "NG5754 2.5% (IARC 09/06)",
+      "acceptance_criteria": "12.5% (1/2 FS)",
+      "max_plastic_strain": "3.20%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "10% increase from baseline due to stiffness change - still within limits",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 5,
+          "section": "Lid Strain Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-11",
+      "component": "L-Vent Bracket (b227 Baseline)",
+      "material": "NG5754 0% (IARC 09/06)",
+      "acceptance_criteria": "13.0% (1/2 FS)",
+      "max_plastic_strain": "3.50%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "247 MPa UTS, 110 MPa Yield - baseline performance",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 6,
+          "section": "L-Bracket Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-12",
+      "component": "L-Vent Bracket (b229 Proposed)",
+      "material": "NG5754 0% (IARC 09/06)",
+      "acceptance_criteria": "13.0% (1/2 FS)",
+      "max_plastic_strain": "4.20%",
+      "test_axis": "Z-Pos Shock",
+      "critical": true,
+      "notes": "20% INCREASE from baseline - monitor for failure during testing",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 6,
+          "section": "L-Bracket Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-13",
+      "component": "Flat Cooling Plate (b227)",
+      "material": "Dana_Mod_AW3003_Y60_V1",
+      "acceptance_criteria": "7.0% (1/2 FS)",
+      "max_plastic_strain": "0.70%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "155 MPa UTS, 60 MPa Yield - baseline",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 7,
+          "section": "Cooling Plate Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-14",
+      "component": "Flat Cooling Plate (b229)",
+      "material": "Dana_Mod_AW3003_Y60_V1",
+      "acceptance_criteria": "7.0% (1/2 FS)",
+      "max_plastic_strain": "1.10%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "57% increase - altered load path from stiffness change",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 7,
+          "section": "Cooling Plate Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-15",
+      "component": "Dimple Cooling Plate (b227)",
+      "material": "Dana_Mod_AW3003_Y60_V1",
+      "acceptance_criteria": "7.0% (1/2 FS)",
+      "max_plastic_strain": "0.60%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "Baseline performance - within limits",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 8,
+          "section": "Dimple Plate Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-16",
+      "component": "Dimple Cooling Plate (b229)",
+      "material": "Dana_Mod_AW3003_Y60_V1",
+      "acceptance_criteria": "7.0% (1/2 FS)",
+      "max_plastic_strain": "0.80%",
+      "test_axis": "Z-Pos Shock",
+      "critical": false,
+      "notes": "33% increase but still well within target",
+      "citations": [
+        {
+          "docId": "edd231804_b229",
+          "page": 8,
+          "section": "Dimple Plate Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-17",
+      "component": "BMCM Housing",
+      "material": "EN AC 44300",
+      "acceptance_criteria": "0.5%",
+      "max_plastic_strain": "0.4%",
+      "test_axis": "Z-Shock",
+      "critical": false,
+      "notes": "Battery management controller housing - within limits",
+      "citations": [
+        {
+          "docId": "edd231804_b246",
+          "page": 9,
+          "section": "BMCM Results"
+        }
+      ]
+    },
+    {
+      "id": "comp-18",
+      "component": "BMCM Manifold",
+      "material": "AW3003-O",
+      "acceptance_criteria": "12.0%",
+      "max_plastic_strain": "0.3%",
+      "test_axis": "Z-Shock",
+      "critical": false,
+      "notes": "Aluminum manifold - excellent performance with large safety margin",
+      "citations": [
+        {
+          "docId": "edd231804_b246",
+          "page": 9,
+          "section": "BMCM Results"
+        }
+      ]
+    }
+  ]
+}

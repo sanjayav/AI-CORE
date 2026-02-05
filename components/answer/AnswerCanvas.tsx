@@ -86,11 +86,11 @@ export function AnswerCanvas({ answer, isStreaming = false }: AnswerCanvasProps)
         {/* Key Values */}
         {answer.key_values && answer.key_values.length > 0 && (
           <div>
-            <div className="flex items-center space-x-2 mb-3">
-              <TrendingUp className="w-4 h-4 text-gray-500" />
-              <h4 className="text-sm font-semibold text-gray-400">Key Specifications</h4>
+            <div className="flex items-center space-x-2 mb-4">
+              <TrendingUp className="w-4 h-4 text-orange-500" />
+              <h4 className="text-sm font-bold text-gray-300">Key Specifications</h4>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {answer.key_values.map((kv: any, idx: number) => (
                 <KeyValueCard key={idx} keyValue={kv} index={idx} />
               ))}

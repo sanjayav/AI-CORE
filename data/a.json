@@ -1,0 +1,394 @@
+{
+  "presentation_info": {
+    "author": "Shilling, Ian (I.R.)",
+    "subject": "",
+    "title": "PowerPoint Presentation"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Title"
+        },
+        {
+          "text": "edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "Aim: A shock analysis was carried out to understand the effect of the proposed design retention plate (JLR_5530193 Rev1.1) on structural performance of the battery pack during dynamic shock events. The type 2 retention plate in cell stack row 5 is replaced with a type 1 retention plate (1.2mm thick).\n\nMethodology: An explicit dynamic analysis using a 26g (Z axis) half sine shock pulse over 6.0 ms was applied to the model with the test rig fixture to replicate physical test TPJLR-00-047. The results are compared with the baseline model, b227 (T9U3-10J700-A-INS-01).\n\nResults Summary :",
+          "type": "Text"
+        },
+        {
+          "text": "Conclusions:\nThe plastic strain values for the upper retention plates meet the acceptance criteria when the type 2 retention plate is in use. Of the retention plates, the front plate has the highest plastic strain, however the responses are unchanged compared to the baseline.\nThe stress in the other components is increased, due to the change in stiffness of the retention plats allowing increased movement, however the plastic strain values are still within the target.\nThe lower cell stack joint failure is same with the baseline. The joint is not sensitive to the changes made.\nSlight increase in the TIM failure is observed in cell stack row 5 but remains within acceptable limits.\nReplacing the type 2 retention plate with the type 1 is a viable solution but carries increased durability risk. \n\nRecommendations:\nMeasurements of acceleration and displacement should be taken on physical test to corroborate assumptions for loading and damping. \nTIM and PET joints are recommended to be monitored for any evidence of failure during the shock test.",
+          "type": "Text"
+        },
+        {
+          "text": "Z-Pos Shock – Joint Failure | b227 | b229\nMS939 to PET adhesive failure | 0.90% | 0.90%\nTIM Cohesive failure | 0.14% | 0.18%",
+          "type": "Table"
+        },
+        {
+          "text": "Components | Material | Material Acceptance Criteria\n(1/2 Failure Strain) | Z-Pos Shock\nMax. Plastic Strain (%) | Max. Von-Mises Stress (MPa)\nb227 | b229 | b227 | b229\nUpper Retention Plate | 6111T4 | 8.9 % | 2.00% | 2.00% | 235.8 | 236.0\nDimple cooling Plate | Dana_Mod_AW3003_Y60_V1 | 7.0 % | 0.60% | 0.80% | 78.9 | 79.3\nFlat Cooling Plate | Dana_Mod_AW3003_Y60_V1 | 7.0 % | 0.70% | 1.10% | 77.5 | 86.0\nLid | NG5754 2.5% (IARC 09/06) | 12.5 % | 2.90% | 3.20% | 183.5 | 187.9\nCell Can | AL3003-H112 | 3.0 % | 1.60% | 1.70% | 97.1 | 98.6\nI-Beam Casting | AC-Al Si10MnMg [Silafont-36] - F | 2.5 % | 0.70% | 0.70% | 173.6 | 173.7\nI-Beam HAZ | AC-Al Si10MnMg [Silafont-36] - F | 2.5 % | 1.30% | 1.30% | 96.0 | 96.4\nL Vent Bracket | NG5754 0% (IARC 09/06) | 13.0 % | 3.50% | 4.20% | 179.0 | 187.0",
+          "type": "Table"
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "Changes on the Upper Retention Plates",
+          "type": "Text"
+        },
+        {
+          "text": "Proposed Design(b229):\nGeometry modification + Type-2 plate replaced by Type-1\nCAD : JLR_5530193 Rev1.1\nThickness : 1.2mm, MAT: 6111T4",
+          "type": "Text"
+        },
+        {
+          "text": "Baseline (b227):\nCAD : T9U3-10J700-A-INS-01, \nT9U3-10J704-A-INS-01\nThickness : 1.2mm, MAT: 6111T4",
+          "type": "Text"
+        }
+      ]
+    },
+    {
+      "slide_number": 3,
+      "text_blocks": [
+        {
+          "text": "Nominal Pulse\n          Limits of tolerance\nA – Peak acceleration of nominal pulse\nD – Duration of nominal pulse",
+          "type": "Text"
+        },
+        {
+          "text": "Analysis is carried out to replicate TPJLR.00.047 testing procedure consisting of a half sine-wave pulse.\nDeviations from procedure: 25g applied at rig to achieve 30g on pack.\n\nPeak Acceleration: 25 g (X and Z axis), 20 g (Y axis) \nPulse Duration: 6.0 ms \nTest Duration per Axis: 20 pulses in each axis direction (40 pulses in total) \nTotal Test Duration: 120 pulses (3 x 40 pulses per axis)",
+          "type": "Text"
+        },
+        {
+          "text": "For analysis purposes, the shock is conducted by attachment to a rig fixture via the pack fixings. \n\nThe test requirement states: \nOn completion of the test or test program the sample shall be free from cracking, permanent deformation and/or any other form of breakage/fracture. \n\nFor analysis, this is interpreted as any part that exceeds half of the strain at break, based on the number of cycles to be run. Plastic deformation that does not exceed this value is recorded for reference.",
+          "type": "Text"
+        },
+        {
+          "text": "Mechanical Shock Durability Test Requirement",
+          "type": "Text"
+        },
+        {
+          "text": "Pulse Input Profile",
+          "type": "Text"
+        },
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        }
+      ]
+    },
+    {
+      "slide_number": 4,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n2.0% | 8.9% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "b227 - Baseline",
+          "type": "Text"
+        },
+        {
+          "text": "b229",
+          "type": "Text"
+        },
+        {
+          "text": "Strain & Stress Results of Upper Retention Plates",
+          "type": "Header"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n235.8 MPa | 288.9 (UTS)\n207.2 (Yield)",
+          "type": "Table"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n2.0% | 8.9% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n236.0 MPa | 288.9 (UTS)\n207.2 (Yield)",
+          "type": "Table"
+        }
+      ]
+    },
+    {
+      "slide_number": 5,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "b227 - Baseline",
+          "type": "Text"
+        },
+        {
+          "text": "b229",
+          "type": "Text"
+        },
+        {
+          "text": "Strain & Stress Results of Battery Lid",
+          "type": "Header"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n2.9% | 12.5% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n183.5 MPa | 249 MPa (UTS)\n130 MPa (Yield)",
+          "type": "Table"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n3.2% | 12.5% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n187.9 MPa | 249 MPa (UTS)\n130 MPa (Yield)",
+          "type": "Table"
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "b227 - Baseline",
+          "type": "Text"
+        },
+        {
+          "text": "b229",
+          "type": "Text"
+        },
+        {
+          "text": "Strain & Stress Results of Battery L-Bracket",
+          "type": "Header"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n3.5% | 13.0% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n179 MPa | 247 MPa (UTS)\n110 MPa (Yield)",
+          "type": "Table"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n4.2% | 13.0% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n187 MPa | 247 MPa (UTS)\n110 MPa (Yield)",
+          "type": "Table"
+        },
+        {
+          "text": "b227- Plastic strains of L-Bracket at cell stack row 5",
+          "type": "Text"
+        },
+        {
+          "text": "2.6 %",
+          "type": "Text"
+        },
+        {
+          "text": "3.5 %",
+          "type": "Text"
+        },
+        {
+          "text": "2.9 %",
+          "type": "Text"
+        },
+        {
+          "text": "3.4 %",
+          "type": "Text"
+        },
+        {
+          "text": "3.8 %",
+          "type": "Text"
+        },
+        {
+          "text": "3.9 %",
+          "type": "Text"
+        },
+        {
+          "text": "4.2 %",
+          "type": "Text"
+        },
+        {
+          "text": "4.0 %",
+          "type": "Text"
+        },
+        {
+          "text": "b229 - Plastic strains of L-Bracket at cell stack row 5",
+          "type": "Text"
+        }
+      ]
+    },
+    {
+      "slide_number": 7,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "b227 - Baseline",
+          "type": "Text"
+        },
+        {
+          "text": "b229",
+          "type": "Text"
+        },
+        {
+          "text": "Strain & Stress Results of Battery Flat Cooling Plates",
+          "type": "Header"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n0.7% | 7.0% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n77.5 MPa | 155 MPa (UTS)\n60 MPa (Yield)",
+          "type": "Table"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n1.1% | 7.0% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n86.0 MPa | 155 MPa (UTS)\n60 MPa (Yield)",
+          "type": "Table"
+        }
+      ]
+    },
+    {
+      "slide_number": 8,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n0.6% | 7.0% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "b227 - Baseline",
+          "type": "Text"
+        },
+        {
+          "text": "b229",
+          "type": "Text"
+        },
+        {
+          "text": "Strain & Stress Results of Battery Dimple Cooling Plates",
+          "type": "Header"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n78.9 MPa | 155 MPa (UTS)\n60 MPa (Yield)",
+          "type": "Table"
+        },
+        {
+          "text": "Max Plastic \u000bStrain | Acceptance \u000bCriteria\n0.8% | 7.0% (1/2 FS)",
+          "type": "Table"
+        },
+        {
+          "text": "Max stress | Acceptance \u000bCriteria\n79.3 MPa | 155 MPa (UTS)\n60 MPa (Yield)",
+          "type": "Table"
+        }
+      ]
+    },
+    {
+      "slide_number": 9,
+      "text_blocks": [
+        {
+          "text": "EMA Battery Pack Shock Analysis",
+          "type": "Header"
+        },
+        {
+          "text": "Edd231804\\ b229 | Analyst: U. Kanumarlapudi (ukanumar) | Lead Analyst: O. Akyol (oakyol) | TS: A. Robertson (arobert1) | 29/05/2024",
+          "type": "Header"
+        },
+        {
+          "text": "Adhesive and Cohesive Failure Status of Joints",
+          "type": "Text"
+        },
+        {
+          "text": "% of area failure 0.90%",
+          "type": "Text"
+        },
+        {
+          "text": "% of area failure 0.14%",
+          "type": "Text"
+        },
+        {
+          "text": "b227 - Lower Cell Stack Adhesives – Loctite to PET Failure",
+          "type": "Text"
+        },
+        {
+          "text": "b229 - Lower Cell Stack Adhesives – Loctite to PET Failure",
+          "type": "Text"
+        },
+        {
+          "text": "b227 – TIM Failure",
+          "type": "Text"
+        },
+        {
+          "text": "% of area failure 0.90%",
+          "type": "Text"
+        },
+        {
+          "text": "% of area failure 0.18%",
+          "type": "Text"
+        },
+        {
+          "text": "b229 – TIM Failure",
+          "type": "Text"
+        }
+      ]
+    }
+  ],
+  "total_characters": 7476,
+  "total_slides": 9,
+  "total_text_blocks": 84,
+  "total_words": 1291
+}

@@ -1,0 +1,431 @@
+{
+  "shock_analysis": {
+    "confidence": 0.96,
+    "summary": "Based on the EMA LR IPB2 BEM Battery Pack Shock Analysis (edd231804\\b246), the contactor carrier exhibited **CRITICAL FAILURE** with plastic strain of **37.2%**, significantly exceeding the 1.6% acceptance criteria. A fix-loop design (Rev 41.1) was implemented with increased swept radius in busbar locators and additional adhesive patches, which improved the design. All other BEM and BMCM components met acceptance criteria with plastic strains within targets.",
+    "key_values": [
+      { "label": "Contactor Carrier Strain", "value": "37.2% (❌ Exceeds 1.6% target)" },
+      { "label": "Fixed Design Strain", "value": "Improved with Rev 41.1" },
+      { "label": "Base Plate Strain", "value": "0.30% (✓ Within 0.45% target)" },
+      { "label": "Busbar Carrier Strain", "value": "1.10% (✓ Within 1.60% target)" },
+      { "label": "Test Specification", "value": "TPJLR.14.093 - 25g/20g shock" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "⚠️ CRITICAL FINDING: Contactor carrier busbar locators exhibited 37.2% plastic strain due to busbar clashing during shock loading, far exceeding 1.6% acceptance criteria.",
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "Root cause identified: Insufficient clearance causing busbar movement and clashing with locator features during dynamic shock events." 
+      },
+      { 
+        "step": 3, 
+        "description": "Fix-loop design Rev 41.1 implemented: Increased swept radius in busbar locators + additional adhesive patch to reduce busbar movement.",
+        "critical": true 
+      },
+      { 
+        "step": 4, 
+        "description": "All other components passed: Base plate (0.30%), busbar carrier (1.10%), connector tower (0.30%), stamped busbar (0.70%) - all within targets." 
+      }
+    ],
+    "assumptions": [
+      "Explicit dynamic analysis using 25g (Z & X axis) and 20g (Y axis) half sine shock pulse over 6.0 ms",
+      "Test rig fixture used to replicate TPJLR.14.093 physical testing",
+      "Material properties: PA6-GF30 for plastic components, Cu-ETP-R240 for busbars, EN_AC_46000 for aluminum castings",
+      "Multi-axis shock loading: 20 pulses per axis direction (120 total pulses across all axes)",
+      "Acceptance criteria: Half of strain at break based on number of cycles"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "edd231804_b246", 
+        "page": 1, 
+        "section": "Results Summary Table", 
+        "confidence": 0.98, 
+        "excerpt": "T9U3-10D760-A-INS-01_CONTACTOR_CARRIER_BEM_REV39P1 | PA6-GF30_Akromid_B28_GF30_FR_V1_cond | Material Acceptance: 1.60% | Max. Plastic Strain: >3.80% (all axes exceed criteria)" 
+      },
+      { 
+        "docId": "edd231804_b246", 
+        "page": 6, 
+        "section": "Z-Shock Contactor Carrier Results", 
+        "confidence": 0.96, 
+        "excerpt": "Component: CONTACTOR CARRIER | Material: PA6-GF30_Akromid_B28_GF30_FR_V1 | 1/2 Failure Strain: 1.6% | Max. Plastic Strain: 37.2%. Critical failure due to busbar clashing." 
+      },
+      { 
+        "docId": "edd231804_b246", 
+        "page": 7, 
+        "section": "Fix-Loop Results", 
+        "confidence": 0.95, 
+        "excerpt": "Design revision 41.1 improved by increasing swept radius in busbar locators and adding extra adhesive patch. Remained peak stresses are localized and considered low risk without affecting part integrity." 
+      }
+    ]
+  },
+  "pressurisation_analysis": {
+    "confidence": 0.94,
+    "summary": "The EMA LR 26MY IPB pack lid pressurisation analysis (edd216804-02) assessed performance against emergency pack pressurisation event TPJLR-14-105. At 400 mbar internal pressure, the pack lid exhibited **7.28% plastic equivalent strain** (target <8.0%) - **CRITERIA SATISFIED**. Main seal damage: 0.02 (target <0.9), Adhesive damage: 0.24 (target <0.9) - both well within limits. However, CFD results show **maximum lid pressure of 39.9 kPa exceeds 25 kPa target** in worst-case vent location (CS5_VP02_Front).",
+    "key_values": [
+      { "label": "Pack Lid Plastic Strain", "value": "7.28% (✓ Within 8.0% target)" },
+      { "label": "Main Seal Damage", "value": "0.02 (✓ Within 0.9 target)" },
+      { "label": "Adhesive Damage", "value": "0.24 (✓ Within 0.9 target)" },
+      { "label": "Max Lid Pressure (CFD)", "value": "39.9 kPa (❌ Exceeds 25 kPa target)" },
+      { "label": "EPED Exit Temperature", "value": "232°C (✓ Within 500°C target)" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "Static pressurisation analysis with 400 mbar uniform pressure applied to pack lid (aligned with CFD results from thermal runaway simulation).",
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "Pack lid plastic strain: 7.28% maximum at node 97683, coordinates [3952.11, 288.15, 1270.5]. Meets 8.0% target with small margin." 
+      },
+      { 
+        "step": 3, 
+        "description": "Seal and adhesive cohesive damage analysis: Main seal 0.02, Adhesive 0.24 - both well below 0.9 failure initiation threshold.",
+        "critical": true 
+      },
+      { 
+        "step": 4, 
+        "description": "CFD multi-location venting study: CS5_VP02_Front worst case at 39.9 kPa lid pressure (59% over target), but EPED temperature acceptable at 232°C." 
+      },
+      {
+        "step": 5,
+        "description": "⚠️ RISK ASSESSMENT: At 500 mbar pressure, pack lid exhibits 8.17% plastic strain - exceeds target. Current 400 mbar design has limited safety margin."
+      }
+    ],
+    "assumptions": [
+      "Pack lid attached to sealing plate with M6, M8, M10 bolts torqued to specification",
+      "Bolt loads: M6=6.5-13kN, M8=10-20kN (min/max for sealing/durability)",
+      "Seal and adhesive modeled using Henkel traction-separation material model at strain rate of 1",
+      "Single emergency venting event - pack not used post-venting",
+      "Room temperature (20°C) analysis with CFD-derived 400 mbar internal pressure",
+      "Multiple vent locations tested: CS1-CS5 with varying VP positions"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "edd216804_25235", 
+        "page": 1, 
+        "section": "Summary Table", 
+        "confidence": 0.98, 
+        "excerpt": "Pack Lid: Plastic strain PEEQ % <8.0 (Target) | 7.28 (Result) - Criteria satisfied. Main Seal: Damage <0.9 | 0.02. Adhesive: Damage <0.9 | 0.24." 
+      },
+      { 
+        "docId": "edd216804_25235", 
+        "page": 9, 
+        "section": "Detailed Results Node 97683", 
+        "confidence": 0.97, 
+        "excerpt": "Component: Pack_lid | Label: 97683 | PEEQ: 7.28% | Target: 8% | Coordinates: [3952.11 288.15 1270.5]. Component target met with minimal margin." 
+      },
+      { 
+        "docId": "edd216804_25235", 
+        "page": 20, 
+        "section": "CFD Venting Analysis Results", 
+        "confidence": 0.96, 
+        "excerpt": "Max Lid Pressure: EMA-UR 39.4 kPa, EMA-LR 39.9 kPa (Target: 25 kPa) at CS5_VP02_Front location. EPED Exit Temp: 232°C (Target: 500°C). Maximum pressure exceeds target but temperatures acceptable." 
+      }
+    ]
+  },
+  "retention_plate_comparison": {
+    "confidence": 0.92,
+    "summary": "Comparative shock analysis (edd231804\\b229) evaluated proposed design changes to upper retention plates, replacing Type-2 plate with Type-1 (1.2mm thick, 6111T4) in cell stack row 5. **All components met acceptance criteria**, but stress increases observed due to stiffness change. Upper retention plates: 2.0% strain (target 8.9%) - **unchanged** from baseline. However, L-vent bracket strain increased from 3.5% to **4.2%** (still within 13.0% target), and flat cooling plate strain increased from 0.7% to **1.1%** (within 7.0% target). TIM cohesive failure increased from 0.14% to 0.18%.",
+    "key_values": [
+      { "label": "Upper Retention Plate", "value": "2.0% strain (unchanged, ✓)" },
+      { "label": "L-Vent Bracket", "value": "4.2% strain (↑ from 3.5%, ✓)" },
+      { "label": "Battery Lid", "value": "3.2% strain (↑ from 2.9%, ✓)" },
+      { "label": "Flat Cooling Plate", "value": "1.1% strain (↑ from 0.7%, ✓)" },
+      { "label": "TIM Cohesive Failure", "value": "0.18% area (↑ from 0.14%, ✓)" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "Design change: Type-2 retention plate replaced with Type-1 (JLR_5530193 Rev1.1) in cell stack row 5. Material: 6111T4, thickness: 1.2mm.",
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "Upper retention plates: Plastic strain remains 2.0% in both b227 baseline and b229 proposed design. Stress: 235.8 MPa vs 236.0 MPa (within 288.9 MPa UTS)." 
+      },
+      { 
+        "step": 3, 
+        "description": "Increased stress in other components: L-vent bracket strain +20% (3.5%→4.2%), flat cooling plate strain +57% (0.7%→1.1%) due to changed stiffness allowing more movement." 
+      },
+      { 
+        "step": 4, 
+        "description": "Joint failures: MS939-to-PET adhesive unchanged at 0.90% area failure. TIM cohesive failure increased 29% (0.14%→0.18%) in cell stack row 5, but within limits." 
+      },
+      {
+        "step": 5,
+        "description": "⚠️ CONCLUSION: Type-1 replacement is viable but carries increased durability risk. Monitor TIM and PET joints during physical shock testing.",
+        "critical": true
+      }
+    ],
+    "assumptions": [
+      "26g (Z axis) half sine shock pulse over 6.0 ms applied to replicate TPJLR-00-047",
+      "Test rig fixture with pack fixings, 25g at rig achieves 30g on pack",
+      "Explicit dynamic analysis comparing baseline b227 (T9U3-10J700-A-INS-01) vs proposed b229 (JLR_5530193 Rev1.1)",
+      "Acceptance criteria: Half of strain at break for 120 total pulses (40 per axis)",
+      "Material properties: 6111T4 (retention plates), NG5754 (lid), Dana_Mod_AW3003_Y60_V1 (cooling plates)"
+    ],
+    "conflicts": [
+      {
+        "field": "L-Vent Bracket Plastic Strain",
+        "baseline_value": "3.5% (b227 baseline)",
+        "proposed_value": "4.2% (b229 proposed)",
+        "severity": "MEDIUM",
+        "recommendation": "20% increase in plastic strain observed. While still within 13.0% acceptance criteria, this indicates higher stress concentration. The change in retention plate stiffness allows increased movement during shock events. Monitor for any evidence of bracket cracking during physical durability testing. Consider stress relief features if test shows premature failure."
+      },
+      {
+        "field": "Flat Cooling Plate Plastic Strain",
+        "baseline_value": "0.7% (b227 baseline)",
+        "proposed_value": "1.1% (b229 proposed)",
+        "severity": "MEDIUM",
+        "recommendation": "57% increase in plastic strain due to altered load path from retention plate stiffness change. Still well within 7.0% target with safety factor of 6.4x. However, monitor for any localized deformation or damage to cooling plate surface finish during testing as this could affect thermal performance."
+      },
+      {
+        "field": "TIM Cohesive Failure",
+        "baseline_value": "0.14% area failure (b227)",
+        "proposed_value": "0.18% area failure (b229)",
+        "severity": "LOW",
+        "recommendation": "29% increase in TIM cohesive failure specifically in cell stack row 5 where Type-2 plate was replaced. Increased movement due to reduced local stiffness causes higher interface shear. Recommend careful inspection of TIM during post-test teardown for any signs of delamination or thermal interface degradation."
+      }
+    ],
+    "citations": [
+      { 
+        "docId": "edd231804_b229", 
+        "page": 1, 
+        "section": "Results Summary Table", 
+        "confidence": 0.98, 
+        "excerpt": "Upper Retention Plate: b227 2.00%, b229 2.00% | L Vent Bracket: b227 3.50%, b229 4.20% | Flat Cooling Plate: b227 0.70%, b229 1.10% | TIM Cohesive failure: b227 0.14%, b229 0.18%" 
+      },
+      { 
+        "docId": "edd231804_b229", 
+        "page": 2, 
+        "section": "Design Changes", 
+        "confidence": 0.97, 
+        "excerpt": "Proposed Design (b229): Geometry modification + Type-2 plate replaced by Type-1. CAD: JLR_5530193 Rev1.1, Thickness: 1.2mm, Material: 6111T4" 
+      },
+      { 
+        "docId": "edd231804_b229", 
+        "page": 9, 
+        "section": "Adhesive Failure Status", 
+        "confidence": 0.95, 
+        "excerpt": "MS939 to PET adhesive failure: b227 0.90%, b229 0.90% (unchanged). TIM Cohesive failure: b227 0.14%, b229 0.18% (slight increase in cell stack row 5 but within acceptable limits)" 
+      }
+    ]
+  },
+  "test_specifications": {
+    "confidence": 0.98,
+    "summary": "The shock analysis was conducted following **TPJLR.14.093** test procedure, which replicates physical testing conditions. The test applies a **half-sine wave shock pulse** with peak acceleration of **25g (Z & X axis)** and **20g (Y axis)** over **6.0 ms duration**. The complete test protocol requires **120 total pulses** (40 pulses per axis: 20 in positive direction, 20 in negative direction) to validate component durability under repeated shock loading conditions.",
+    "key_values": [
+      { "label": "Test Standard", "value": "TPJLR.14.093" },
+      { "label": "Peak Acceleration (Z/X)", "value": "25g over 6.0 ms" },
+      { "label": "Peak Acceleration (Y)", "value": "20g over 6.0 ms" },
+      { "label": "Total Test Pulses", "value": "120 (40 per axis)" },
+      { "label": "Pulse Shape", "value": "Half-sine wave" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "Test Setup: Battery pack mounted to test rig fixture via pack fixings. Rig applies 25g to achieve target 30g acceleration on pack due to fixture amplification.",
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "X-Axis Testing: 20 pulses in positive direction (X-Pos) at 25g, followed by 20 pulses in negative direction (X-Neg) at 25g. Total: 40 pulses." 
+      },
+      { 
+        "step": 3, 
+        "description": "Y-Axis Testing: 20 pulses in positive direction (Y-Pos) at 20g, followed by 20 pulses in negative direction (Y-Neg) at 20g. Total: 40 pulses." 
+      },
+      { 
+        "step": 4, 
+        "description": "Z-Axis Testing: 20 pulses in positive direction (Z-Pos) at 25g, followed by 20 pulses in negative direction (Z-Neg) at 25g. Total: 40 pulses." 
+      },
+      {
+        "step": 5,
+        "description": "Acceptance Criteria: On completion, sample shall be free from cracking, permanent deformation, and/or any form of breakage/fracture. Analysis interprets this as components not exceeding half of strain at break.",
+        "critical": true
+      }
+    ],
+    "assumptions": [
+      "Half-sine pulse shape chosen to represent worst-case shock impact",
+      "6.0 ms pulse duration matches typical vehicle crash/impact scenarios",
+      "Explicit dynamic FEA analysis replicates physical test conditions",
+      "Test rig fixture dynamics included in model (rig amplifies acceleration from 25g to 30g on pack)",
+      "Multi-axis testing ensures components validated in all critical directions"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "edd231804_b246", 
+        "page": 3, 
+        "section": "Mechanical Shock Durability Test Requirement", 
+        "confidence": 0.99, 
+        "excerpt": "Peak Acceleration: 25 g (X and Z axis), 20 g (Y axis). Pulse Duration: 6.0 ms. Test Duration per Axis: 20 pulses in each axis direction (40 pulses in total). Total Test Duration: 120 pulses (3 x 40 pulses per axis)" 
+      },
+      { 
+        "docId": "edd231804_b246", 
+        "page": 3, 
+        "section": "Test Requirement Statement", 
+        "confidence": 0.97, 
+        "excerpt": "Analysis is carried out to replicate TPJLR.00.047 testing procedure consisting of a half sine-wave pulse. Deviations from procedure: 25g applied at rig to achieve 30g on pack." 
+      }
+    ]
+  },
+  "material_properties": {
+    "confidence": 0.95,
+    "summary": "The BEM battery pack uses multiple specialized materials optimized for electrical, thermal, and structural performance. **PA6-GF30_Akromid_B28_GF30_FR_V1** (30% glass-filled nylon with flame retardant) is used for plastic structural components like the contactor carrier, with 1.6% acceptance criteria for plastic strain. **Cu-ETP-R240** (electrolytic tough pitch copper) is used for electrical busbars with 4.0% acceptance criteria. **EN_AC_46000_MONO** aluminum casting alloy is used for the base plate with 0.45% acceptance criteria.",
+    "key_values": [
+      { "label": "PA6-GF30 (Plastics)", "value": "1.60% acceptance, glass-filled nylon" },
+      { "label": "Cu-ETP-R240 (Busbars)", "value": "4.00% acceptance, copper alloy" },
+      { "label": "EN_AC_46000 (Castings)", "value": "0.45% acceptance, aluminum" },
+      { "label": "6111T4 (Plates)", "value": "8.9% acceptance, aluminum alloy" },
+      { "label": "AW3003-O (Manifold)", "value": "12.0% acceptance, aluminum" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "PA6-GF30_Akromid_B28_GF30_FR_V1: Glass-reinforced polyamide with flame retardant. Used in contactor carrier, busbar carrier, and connector tower. 30% glass fiber provides strength while maintaining electrical insulation.",
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "Cu-ETP-R240: Electrolytic tough pitch copper with 240 MPa minimum tensile strength. Excellent electrical conductivity (≥58 MS/m) for high-current busbars. Higher strain allowance (4.0%) due to copper's ductility." 
+      },
+      { 
+        "step": 3, 
+        "description": "EN_AC_46000_MONO: Aluminum casting alloy with 240 MPa UTS and 140 MPa yield strength. Used for base plate requiring high strength-to-weight ratio. Lower acceptance (0.45%) due to casting's reduced ductility vs. wrought aluminum." 
+      },
+      { 
+        "step": 4, 
+        "description": "6111T4: Aluminum alloy used in retention plates. Higher acceptance criteria (8.9%) due to superior ductility of wrought aluminum. T4 temper provides optimal balance of strength and formability." 
+      }
+    ],
+    "assumptions": [
+      "Material properties measured at room temperature (20°C)",
+      "Acceptance criteria set at 1/2 of strain at break for durability testing",
+      "PA6-GF30 properties include conditioning per material standard",
+      "Copper busbar properties based on R240 grade specification",
+      "All materials meet automotive quality standards"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "edd231804_b246", 
+        "page": 1, 
+        "section": "Results Summary - Material Specifications", 
+        "confidence": 0.98, 
+        "excerpt": "PA6-GF30_Akromid_B28_GF30_FR_V1_cond: Material Acceptance Criteria 1.60%. Cu-ETP-R240: 4.00%. EN_AC_46000_MONO: 0.45%" 
+      },
+      { 
+        "docId": "edd231804_b246", 
+        "page": 5, 
+        "section": "Base Plate Material Properties", 
+        "confidence": 0.96, 
+        "excerpt": "Component: Base Plate | Material: EN_AC_46000_Mono_V1 | 1/2 Failure Strain: 0.45% | UTS & Proof Stress: 240 MPa (UTS), 140 MPa (Yield)" 
+      }
+    ]
+  },
+  "bmcm_analysis": {
+    "confidence": 0.97,
+    "summary": "The **Battery Management Controller Module (BMCM) Rev 20.1** demonstrated excellent performance under shock loading, with **all components meeting acceptance criteria**. The BMCM housing (EN AC 44300 aluminum) showed 0.4% plastic strain against 0.5% target, while the BMCM manifold (AW3003-O aluminum) exhibited only 0.3% strain against 12.0% target - providing a **40x safety margin**. No design changes or durability concerns identified for BMCM components.",
+    "key_values": [
+      { "label": "BMCM Housing Strain", "value": "0.4% (✓ Within 0.5% target)" },
+      { "label": "BMCM Manifold Strain", "value": "0.3% (✓ Within 12.0% target)" },
+      { "label": "Housing Material", "value": "EN AC 44300 aluminum casting" },
+      { "label": "Manifold Material", "value": "AW3003-O aluminum (annealed)" },
+      { "label": "Safety Margin", "value": "40x for manifold, excellent" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "BMCM Housing (EN AC 44300): Aluminum casting alloy optimized for electronic enclosures. Maximum plastic strain 0.4% under Z-shock loading - within 0.5% acceptance with 20% safety margin." 
+      },
+      { 
+        "step": 2, 
+        "description": "BMCM Manifold (AW3003-O): Annealed aluminum alloy (3003 series) for cooling/fluid distribution. Excellent ductility in O-temper allows 12.0% acceptance. Actual strain only 0.3% = 97.5% margin.",
+        "critical": false 
+      },
+      { 
+        "step": 3, 
+        "description": "No critical findings: Both BMCM components show low stress concentrations and minimal plastic deformation. Current design is robust for shock durability requirements." 
+      },
+      { 
+        "step": 4, 
+        "description": "BMCM assembly integration: Module interfaces with BEM via electrical connectors and mechanical fixings. Shock loads transfer through mounting points without excessive stress." 
+      }
+    ],
+    "assumptions": [
+      "BMCM housing analyzed with electronic components mass included",
+      "Manifold internal pressure effects included in analysis",
+      "Material properties for EN AC 44300 per casting standard",
+      "AW3003-O annealed temper provides maximum ductility",
+      "BMCM mounting interfaces modeled with correct stiffness"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "edd231804_b246", 
+        "page": 9, 
+        "section": "Z-Shock BMCM Results", 
+        "confidence": 0.97, 
+        "excerpt": "Component: BMCM Housing | Material: EN AC 44300 | 1/2 Failure Strain: 0.5% | Max. Plastic Strain: 0.4%. Component: BMCM Manifold | Material: AW3003-O | 1/2 Failure Strain: 12.0% | Max. Plastic Strain: 0.3%" 
+      }
+    ]
+  },
+  "recommendations": {
+    "confidence": 0.93,
+    "summary": "Based on the shock analysis results, **four key recommendations** are provided: (1) Ensure initial and dynamic clearances for busbar covers to minimize interaction risk, (2) Review the dFMEA (Design Failure Mode Effects Analysis) for busbar type 11 clashing conditions with contactor carrier, (3) Monitor closely the contactor carrier-busbar interaction during physical testing for evidence of failure, and (4) Follow-up PSD (Power Spectral Density) analysis results for fix-loop designs of contactor carrier and connector tower.",
+    "key_values": [
+      { "label": "Clearance Verification", "value": "Critical - busbar cover clearances" },
+      { "label": "dFMEA Review", "value": "Required for busbar type 11 clashing" },
+      { "label": "Physical Test Monitoring", "value": "Watch contactor-busbar interaction" },
+      { "label": "PSD Follow-up", "value": "Validate fix-loop designs" },
+      { "label": "Priority Level", "value": "HIGH - before production release" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "⚠️ IMMEDIATE ACTION: Ensure initial and dynamic clearances for busbar covers are measured and documented. Minimum clearance must prevent contact during worst-case shock scenario (30g).",
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "dFMEA Update: Review Design Failure Mode Effects Analysis specifically for busbar type 11 clashing risk with contactor carrier Rev 41.1. Update risk priority numbers (RPN) based on analysis findings.",
+        "critical": true 
+      },
+      { 
+        "step": 3, 
+        "description": "Physical Test Protocol: During TPJLR.14.093 shock testing, instrument the contactor carrier-busbar interface with accelerometers and strain gauges. Monitor for any evidence of contact, wear, or deformation." 
+      },
+      { 
+        "step": 4, 
+        "description": "PSD Validation: Conduct Power Spectral Density analysis on fix-loop designs (Rev 41.1 contactor carrier and updated connector tower) to confirm resonance frequencies are outside operating range." 
+      },
+      {
+        "step": 5,
+        "description": "Post-Test Teardown: After shock testing, disassemble and inspect busbar locators, adhesive patches, and contact surfaces for any degradation, wear patterns, or signs of impending failure."
+      }
+    ],
+    "assumptions": [
+      "Physical testing scheduled to validate FEA predictions",
+      "dFMEA process in place and accessible for updates",
+      "Test equipment available for instrumented monitoring",
+      "PSD analysis capability available for follow-up studies",
+      "Production timeline allows for corrective actions if needed"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "edd231804_b246", 
+        "page": 1, 
+        "section": "Recommendations", 
+        "confidence": 0.99, 
+        "excerpt": "Ensure initial and dynamic clearances for the busbar covers to minimize the risk of interaction with the other parts. Review the dFMEA on the risk of clashing conditions for busbar type 11 to contactor carrier. Monitor closely the interaction between contactor carrier and the busbar type 11 during physical test for any evidence of failure. Please follow-up the PSD results for the fix-loop designs of contactor carrier and connector tower." 
+      }
+    ]
+  }
+}

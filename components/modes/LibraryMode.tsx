@@ -3,21 +3,22 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Library, Search, Grid3x3, List, FileText, Calendar, User, Tag, Download } from "lucide-react";
-import mockLibrary from "@/data/mockLibrary.json";
+import realPresentations from "@/data/realPresentations.json";
 
 export function LibraryMode() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchQuery, setSearchQuery] = useState("");
 
   const stats = {
-    total: mockLibrary.documents.length,
-    active: mockLibrary.documents.filter(d => d.status === "active").length,
-    archived: mockLibrary.documents.filter(d => d.status === "archived").length,
+    total: realPresentations.documents.length,
+    active: realPresentations.documents.filter(d => d.status === "active").length,
+    archived: realPresentations.documents.filter(d => d.status === "archived").length,
   };
 
-  const filteredDocs = mockLibrary.documents.filter(doc =>
+  const filteredDocs = realPresentations.documents.filter(doc =>
     doc.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    doc.id.toLowerCase().includes(searchQuery.toLowerCase())
+    doc.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    doc.author.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
@@ -151,11 +152,15 @@ export function LibraryMode() {
                   <div className="space-y-2 mb-4">
                     <div className="flex items-center gap-2 text-xs text-gray-400">
                       <Calendar className="w-3 h-3" />
-                      <span>{doc.lastModified}</span>
+                      <span>{doc.date}</span>
                     </div>
                     <div className="flex items-center gap-2 text-xs text-gray-400">
                       <User className="w-3 h-3" />
-                      <span>{doc.accessLevel}</span>
+                      <span>{doc.author}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400">
+                      <FileText className="w-3 h-3" />
+                      <span>{doc.slides} slides</span>
                     </div>
                   </div>
 
@@ -199,14 +204,18 @@ export function LibraryMode() {
                       <div className="flex items-center gap-6 text-xs text-gray-400">
                         <div className="flex items-center gap-2">
                           <Calendar className="w-3 h-3" />
-                          <span>{doc.lastModified}</span>
+                          <span>{doc.date}</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <User className="w-3 h-3" />
-                          <span>{doc.accessLevel}</span>
+                          <span>{doc.author}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <FileText className="w-3 h-3" />
+                          <span>{doc.slides} slides</span>
                         </div>
                         <div className="flex gap-1">
-                          {doc.tags?.slice(0, 3).map((tag) => (
+                          {doc.tags?.slice(0, 2).map((tag) => (
                             <span
                               key={tag}
                               className="px-2 py-1 bg-[#2D2D2D] text-gray-400 text-xs rounded-lg border border-gray-700"
