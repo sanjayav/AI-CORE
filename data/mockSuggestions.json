@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "name": "Critical Investigation",
+      "icon": "AlertCircle",
+      "questions": [
+        "What are the cylinder head bolt torque specifications for Defender 2022 P300 engine?",
+        "What changed in the cylinder head bolt procedure between 2021 and 2022 Defender?",
+        "Why must TTY bolts be replaced after removal on P300 engines?",
+        "What are the consequences of reusing torque-to-yield bolts?"
+      ]
+    },
+    {
+      "name": "Comparative Analysis",
+      "icon": "GitCompare",
+      "questions": [
+        "Compare cylinder head specifications between Defender 2021 vs 2022 models",
+        "What are the major powertrain changes from 2021 to 2022 Defender?",
+        "How did engine oil capacity change between model years?",
+        "What maintenance intervals were updated in the 2022 service manual?"
+      ]
+    },
+    {
+      "name": "Technical Specifications",
+      "icon": "Code",
+      "questions": [
+        "Extract all torque specifications for P300 engine assembly",
+        "What are the fuel pressure specifications for the P300 turbo system?",
+        "List all timing system changes from timing belt to timing chain",
+        "What are the complete engine oil specifications for warranty compliance?"
+      ]
+    },
+    {
+      "name": "Diagnostic Support",
+      "icon": "Sparkles",
+      "questions": [
+        "How do I diagnose insufficient clamping force in cylinder head assembly?",
+        "What DTC codes relate to cylinder head or gasket failures?",
+        "What are the symptoms of improper cylinder head bolt installation?",
+        "How to perform cylinder leak-down test on P300 engine?"
+      ]
+    }
+  ]
+}

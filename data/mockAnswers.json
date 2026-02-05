@@ -1,0 +1,206 @@
+{
+  "library": {
+    "summary": "**CRITICAL UPDATE - 2022 Model Year**: The cylinder head bolt torque specification for the Defender 2022 P300 engine has been revised from the 2021 procedure. The new specification requires a three-stage tightening process: Stage 1 at 20 Nm (increased from 15 Nm), Stage 2 at 70 Nm (increased from 65 Nm), followed by 180° angular tightening. This change addresses field reports of insufficient clamping force. All M12 cylinder head bolts are torque-to-yield (TTY) type and MUST be replaced after removal - reuse will result in catastrophic engine failure.",
+    "key_values": [
+      { "label": "Stage 1 Torque", "value": "20 Nm (↑ from 15 Nm)" },
+      { "label": "Stage 2 Torque", "value": "70 Nm (↑ from 65 Nm)" },
+      { "label": "Angular Tightening", "value": "180° (unchanged)" },
+      { "label": "Bolt Type", "value": "M12 x 1.5 TTY" },
+      { "label": "Replacement", "value": "MANDATORY" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "⚠️ CRITICAL: Verify all bolts are NEW. Part number LR123456 only. Torque-to-yield bolts must NEVER be reused. Check packaging seals are intact.", 
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "Ensure engine is at room temperature (20°C ± 5°C). Clean cylinder head and block mating surfaces thoroughly. Inspect for damage, warping, or debris." 
+      },
+      { 
+        "step": 3, 
+        "description": "Apply thin coat of clean engine oil to bolt threads and under bolt heads. Install all bolts finger-tight in correct locations." 
+      },
+      { 
+        "step": 4, 
+        "description": "Stage 1: Using calibrated torque wrench, tighten all bolts to 20 Nm in spiral sequence starting from center outward. Verify torque wrench calibration is within 12 months.", 
+        "critical": true 
+      },
+      { 
+        "step": 5, 
+        "description": "Stage 2: In same sequence, tighten all bolts to 70 Nm. Do not skip directly to Stage 2 - this ensures proper bolt stretch.", 
+        "critical": true 
+      },
+      { 
+        "step": 6, 
+        "description": "Stage 3: Apply 180° angular tightening to each bolt in sequence. Use angle gauge for accuracy. Mark bolts with paint pen to track rotation. Final position should be approximately 90° past Stage 2.", 
+        "critical": true 
+      },
+      { 
+        "step": 7, 
+        "description": "⚠️ POST-INSTALLATION: Do NOT re-torque after engine run. TTY bolts are designed for single installation. Document bolt lot number and installation date for warranty tracking." 
+      }
+    ],
+    "assumptions": [
+      "Genuine Land Rover bolts (LR123456) are used - aftermarket bolts may have different specifications",
+      "Torque wrench calibrated within last 12 months with certification traceable to national standards",
+      "Angle gauge accurate to ±2 degrees",
+      "Engine at room temperature - hot engine will give false torque readings",
+      "Cylinder head surface flatness within 0.05mm tolerance",
+      "No previous bolt failures or stripped threads in block"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "SM-DEF-2022-PT-001", 
+        "page": 127, 
+        "section": "3.2.4 Cylinder Head Installation - Revised Procedure", 
+        "confidence": 0.98, 
+        "excerpt": "MODEL YEAR 2022 UPDATE: Cylinder head bolt torque increased. Stage 1: 20 Nm (previous 15 Nm). Stage 2: 70 Nm (previous 65 Nm). Stage 3: 180° angular. Critical: Bolts are TTY type, replace after each removal. Failure to replace will result in insufficient clamping force, leading to head gasket failure, coolant contamination, and potential engine seizure." 
+      },
+      { 
+        "docId": "TS-DEF-2022-ENG-P300", 
+        "page": 45, 
+        "section": "2.3.7 Fastener Specifications - Engineering Change Notice ECN-2022-034", 
+        "confidence": 0.96, 
+        "excerpt": "Engineering investigation following field reports (FR-2021-089 through FR-2021-142) revealed 2021 torque values provided insufficient clamping under thermal cycling. New specification: 20 Nm → 70 Nm + 180°. Validation testing confirms 40% increase in clamp load retention over service life." 
+      },
+      { 
+        "docId": "SERVICE-BULLETIN-SB-2022-PT-012", 
+        "page": 3, 
+        "section": "Warranty Policy - TTY Bolt Replacement", 
+        "confidence": 0.94, 
+        "excerpt": "Effective MY2022: All warranty claims for cylinder head gasket failure will be denied if investigation reveals reused TTY bolts. Technicians must document new bolt installation with part numbers and lot codes." 
+      }
+    ]
+  },
+  "upload": {
+    "summary": "⚠️ SUPPLIER VARIANCE DETECTED: The uploaded supplier manual specifies a different tightening procedure that conflicts with JLR engineering standards. Supplier recommends 25 Nm initial torque followed by two 90° angular turns (total 180°), with no intermediate 70 Nm stage. This procedure is NOT APPROVED for production vehicles and should only be used for supplier validation testing. Field use of this procedure may void warranty.",
+    "key_values": [
+      { "label": "Initial Torque", "value": "25 Nm" },
+      { "label": "Angular Method", "value": "90° + 90°" },
+      { "label": "Intermediate Stage", "value": "NONE" },
+      { "label": "Bolt Type", "value": "Supplier Specific" },
+      { "label": "Production Use", "value": "❌ NOT APPROVED" }
+    ],
+    "procedure_steps": [
+      { 
+        "step": 1, 
+        "description": "⚠️ WARNING: This is supplier test procedure only. Use supplier bolts (SUP789012) for validation testing.", 
+        "critical": true 
+      },
+      { 
+        "step": 2, 
+        "description": "Clean surfaces and apply thread sealant per supplier specification." 
+      },
+      { 
+        "step": 3, 
+        "description": "Tighten to 25 Nm in supplier-specified sequence (outer to inner)." 
+      },
+      { 
+        "step": 4, 
+        "description": "Apply first 90° angular turn." 
+      },
+      { 
+        "step": 5, 
+        "description": "Apply second 90° angular turn for total 180° rotation." 
+      }
+    ],
+    "assumptions": [
+      "Supplier validation environment only",
+      "Non-production bolts used",
+      "Testing purposes - not for customer vehicles"
+    ],
+    "conflicts": [],
+    "citations": [
+      { 
+        "docId": "SUP-P300-ENG-MAN-V1.2", 
+        "page": 89, 
+        "section": "4.1 Test Validation Procedure", 
+        "confidence": 0.89, 
+        "excerpt": "Supplier test procedure: 25 Nm + 90° + 90°. NOTE: This procedure is for supplier component validation only and differs from production vehicle assembly specifications." 
+      }
+    ]
+  },
+  "combined_conflict": {
+    "summary": "🚨 CRITICAL CONFLICT DETECTED: Significant discrepancies exist between JLR Library specification and uploaded Supplier Manual. The JLR procedure (20 Nm → 70 Nm + 180°) is the ONLY approved method for production vehicles and warranty compliance. The supplier procedure (25 Nm + 90° + 90°) is for TEST VALIDATION ONLY and must NOT be used on customer vehicles. Using incorrect procedure will result in: 1) Insufficient clamping force, 2) Head gasket failure, 3) Coolant/oil contamination, 4) Potential engine seizure, 5) Warranty denial. **ALWAYS follow JLR Library specifications for production work.**",
+    "key_values": [
+      { "label": "JLR Stage 1", "value": "20 Nm" },
+      { "label": "Supplier Initial", "value": "25 Nm" },
+      { "label": "JLR Stage 2", "value": "70 Nm" },
+      { "label": "Supplier Stage 2", "value": "NONE ❌" },
+      { "label": "JLR Angular", "value": "180° (single)" },
+      { "label": "Supplier Angular", "value": "90° + 90° (split)" }
+    ],
+    "procedure_steps": [],
+    "assumptions": [],
+    "conflicts": [
+      {
+        "field": "Initial Torque Value",
+        "library_value": "20 Nm (JLR Production Standard)",
+        "upload_value": "25 Nm (Supplier Test Procedure)",
+        "severity": "CRITICAL",
+        "recommendation": "⚠️ MANDATORY: Use JLR specification (20 Nm). The 25 Nm supplier value is 25% higher and is for component validation testing only. Using this on production vehicles will over-stress bolts during initial tightening stage and may cause premature yield. This is a WARRANTY COMPLIANCE issue."
+      },
+      {
+        "field": "Intermediate Torque Stage",
+        "library_value": "70 Nm intermediate stage REQUIRED",
+        "upload_value": "NO intermediate stage",
+        "severity": "CRITICAL",
+        "recommendation": "⚠️ CRITICAL: JLR requires 70 Nm intermediate stage to ensure proper bolt stretch progression. Skipping this stage (as in supplier procedure) results in uneven bolt elongation and can cause localized stress concentrations. This increases risk of head gasket failure by 40% based on engineering analysis (ECN-2022-034)."
+      },
+      {
+        "field": "Angular Tightening Method",
+        "library_value": "Single 180° turn after 70 Nm",
+        "upload_value": "Two 90° turns with no intermediate torque",
+        "severity": "HIGH",
+        "recommendation": "JLR method (180° after 70 Nm) provides controlled, progressive bolt stretch. Supplier method (90° + 90° without intermediate torque) can cause inconsistent clamp load distribution. Use JLR method for all production work."
+      },
+      {
+        "field": "Bolt Type & Part Number",
+        "library_value": "LR123456 (JLR TTY bolt, MUST replace)",
+        "upload_value": "SUP789012 (Supplier test bolt)",
+        "severity": "CRITICAL",
+        "recommendation": "🚨 NEVER interchange bolt part numbers. JLR bolts (LR123456) are engineered specifically for the 20→70 Nm + 180° procedure. Supplier bolts (SUP789012) are for validation testing only. Using wrong bolts WILL cause engine failure and void ALL warranties. Verify part number on every installation."
+      },
+      {
+        "field": "Tightening Sequence",
+        "library_value": "Center outward (spiral pattern)",
+        "upload_value": "Outer to inner",
+        "severity": "HIGH",
+        "recommendation": "JLR sequence (center outward) ensures even pressure distribution from combustion chamber center. Supplier sequence (outer to inner) is reverse and can trap air under gasket center, causing hot spots. Use JLR sequence exclusively."
+      }
+    ],
+    "citations": [
+      { 
+        "docId": "SM-DEF-2022-PT-001", 
+        "page": 127, 
+        "section": "3.2.4 Cylinder Head Installation", 
+        "confidence": 0.98, 
+        "excerpt": "MODEL YEAR 2022 PRODUCTION PROCEDURE: 20 Nm → 70 Nm + 180° angular. Use part LR123456 only. Replace bolts after each removal. DO NOT use alternative procedures or part numbers." 
+      },
+      { 
+        "docId": "TS-DEF-2022-ENG-P300", 
+        "page": 45, 
+        "section": "2.3.7 Engineering Standards", 
+        "confidence": 0.96, 
+        "excerpt": "Production torque specification based on 18-month validation program. Alternative procedures not approved for customer vehicles. ECN-2022-034 supersedes all previous specifications." 
+      },
+      { 
+        "docId": "SUP-P300-ENG-MAN-V1.2", 
+        "page": 89, 
+        "section": "4.1 Supplier Validation", 
+        "confidence": 0.89, 
+        "excerpt": "Supplier test procedure for component validation. Not for production vehicle use. Refer to OEM specifications for actual assembly procedures." 
+      },
+      { 
+        "docId": "WARRANTY-POLICY-2022", 
+        "page": 12, 
+        "section": "5.3 Warranty Exclusions", 
+        "confidence": 0.95, 
+        "excerpt": "Warranty claims will be DENIED if investigation reveals: 1) Non-genuine parts used, 2) Incorrect torque procedures followed, 3) TTY bolts reused, 4) Supplier test procedures used on production vehicles." 
+      }
+    ]
+  }
+}

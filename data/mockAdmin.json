@@ -1,0 +1,111 @@
+{
+  "ingestionStatus": {
+    "totalDocuments": 247,
+    "indexed": 242,
+    "processing": 3,
+    "failed": 2,
+    "lastUpdate": "2024-02-05T14:30:00Z"
+  },
+  "recentJobs": [
+    {
+      "id": "job-1",
+      "document": "Defender 2023 Powertrain Service Manual",
+      "status": "processing",
+      "progress": 67,
+      "startedAt": "2024-02-05T14:15:00Z",
+      "estimatedCompletion": "2024-02-05T14:45:00Z"
+    },
+    {
+      "id": "job-2",
+      "document": "Range Rover Sport 2023 Chassis Manual",
+      "status": "processing",
+      "progress": 34,
+      "startedAt": "2024-02-05T14:20:00Z",
+      "estimatedCompletion": "2024-02-05T15:00:00Z"
+    },
+    {
+      "id": "job-3",
+      "document": "Evoque 2022 E&E Technical Spec",
+      "status": "completed",
+      "progress": 100,
+      "startedAt": "2024-02-05T13:30:00Z",
+      "completedAt": "2024-02-05T14:00:00Z"
+    },
+    {
+      "id": "job-4",
+      "document": "Discovery 2022 Service Bulletin SB-2022-045",
+      "status": "failed",
+      "progress": 0,
+      "startedAt": "2024-02-05T13:00:00Z",
+      "error": "PDF extraction error: corrupt file structure"
+    }
+  ],
+  "indexHealth": {
+    "overall": 98.5,
+    "vectorStore": 99.2,
+    "metadata": 97.8,
+    "searchPerformance": 98.1
+  },
+  "auditTrail": [
+    {
+      "id": "audit-1",
+      "timestamp": "2024-02-05T14:28:00Z",
+      "user": "john.smith@jlr.com",
+      "action": "query",
+      "query": "torque specification M12 bolts",
+      "scope": "Library - Defender 2022",
+      "documentsAccessed": ["SM-DEF-2022-PT-001", "TS-DEF-2022-ENG-P300"]
+    },
+    {
+      "id": "audit-2",
+      "timestamp": "2024-02-05T14:15:00Z",
+      "user": "sarah.jones@jlr.com",
+      "action": "compare",
+      "documentsCompared": ["SM-DEF-2021-PT-001", "SM-DEF-2022-PT-001"],
+      "scope": "Library"
+    },
+    {
+      "id": "audit-3",
+      "timestamp": "2024-02-05T14:05:00Z",
+      "user": "mike.chen@jlr.com",
+      "action": "upload",
+      "document": "Supplier_Manual_ZF_2023.pdf",
+      "visibility": "Private"
+    },
+    {
+      "id": "audit-4",
+      "timestamp": "2024-02-05T13:50:00Z",
+      "user": "emma.wilson@jlr.com",
+      "action": "extract",
+      "query": "all torque specifications powertrain",
+      "scope": "Library - Defender 2022",
+      "recordsExtracted": 24
+    }
+  ],
+  "permissions": [
+    {
+      "role": "Engineering",
+      "users": 147,
+      "access": ["Library", "Compare", "Extract", "Upload"],
+      "restrictions": "Full access to all technical documentation"
+    },
+    {
+      "role": "Technician",
+      "users": 892,
+      "access": ["Library", "Ask"],
+      "restrictions": "Read-only access to service manuals"
+    },
+    {
+      "role": "Management",
+      "users": 34,
+      "access": ["Library", "Compare", "Extract", "Admin"],
+      "restrictions": "Full access including audit trails"
+    },
+    {
+      "role": "Supplier",
+      "users": 56,
+      "access": ["Library"],
+      "restrictions": "Limited to supplier-specific documentation"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "documents": [
+    {
+      "id": "SM-DEF-2022-PT-001",
+      "name": "Defender 2022 Powertrain Service Manual",
+      "program": "Defender",
+      "modelYear": "2022",
+      "subsystem": "Powertrain",
+      "docType": "Service Manual",
+      "version": "4.1",
+      "pages": 456,
+      "indexed": "2023-11-15T14:30:00Z",
+      "lastModified": "2022-09-20",
+      "accessLevel": "Engineering",
+      "status": "active",
+      "tags": ["P300", "D300", "Engine", "Transmission"]
+    },
+    {
+      "id": "SM-DEF-2021-PT-001",
+      "name": "Defender 2021 Powertrain Service Manual",
+      "program": "Defender",
+      "modelYear": "2021",
+      "subsystem": "Powertrain",
+      "docType": "Service Manual",
+      "version": "3.2",
+      "pages": 432,
+      "indexed": "2022-10-08T09:15:00Z",
+      "lastModified": "2021-08-15",
+      "accessLevel": "Engineering",
+      "status": "archived",
+      "tags": ["P300", "D300", "Engine"]
+    },
+    {
+      "id": "TS-DEF-2022-ENG-P300",
+      "name": "P300 Engine Technical Specification",
+      "program": "Defender",
+      "modelYear": "2022",
+      "subsystem": "Powertrain",
+      "docType": "Technical Specification",
+      "version": "2.0",
+      "pages": 124,
+      "indexed": "2023-11-15T14:35:00Z",
+      "lastModified": "2022-07-10",
+      "accessLevel": "Engineering",
+      "status": "active",
+      "tags": ["P300", "Engine", "Specifications"]
+    },
+    {
+      "id": "SM-RR-2022-CH-001",
+      "name": "Range Rover 2022 Chassis Service Manual",
+      "program": "Range Rover",
+      "modelYear": "2022",
+      "subsystem": "Chassis",
+      "docType": "Service Manual",
+      "version": "5.3",
+      "pages": 389,
+      "indexed": "2023-11-20T11:00:00Z",
+      "lastModified": "2022-10-05",
+      "accessLevel": "Engineering",
+      "status": "active",
+      "tags": ["Suspension", "Steering", "Brakes"]
+    },
+    {
+      "id": "SM-DEF-2022-EE-001",
+      "name": "Defender 2022 Electrical & Electronics Manual",
+      "program": "Defender",
+      "modelYear": "2022",
+      "subsystem": "E&E",
+      "docType": "Service Manual",
+      "version": "3.8",
+      "pages": 567,
+      "indexed": "2023-11-18T16:45:00Z",
+      "lastModified": "2022-11-12",
+      "accessLevel": "Engineering",
+      "status": "active",
+      "tags": ["Wiring", "Diagnostics", "Sensors", "Infotainment"]
+    },
+    {
+      "id": "TR-DEF-2022-Q4",
+      "name": "Defender 2022 Q4 Test Report",
+      "program": "Defender",
+      "modelYear": "2022",
+      "subsystem": "All",
+      "docType": "Test Report",
+      "version": "1.0",
+      "pages": 87,
+      "indexed": "2023-12-01T10:30:00Z",
+      "lastModified": "2022-12-15",
+      "accessLevel": "Engineering",
+      "status": "active",
+      "tags": ["Testing", "Validation", "Q4"]
+    }
+  ],
+  "stats": {
+    "totalDocuments": 6,
+    "totalPages": 2055,
+    "lastIndexed": "2023-12-01T10:30:00Z",
+    "indexHealth": 98.5
+  }
+}

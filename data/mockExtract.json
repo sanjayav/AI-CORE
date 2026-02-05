@@ -1,0 +1,167 @@
+{
+  "query": "Extract all torque specifications for Defender 2022 Powertrain subsystem",
+  "extractType": "torque_specifications",
+  "totalRecords": 24,
+  "data": [
+    {
+      "id": "torque-1",
+      "component": "Cylinder Head Bolts M12",
+      "torque": "20 Nm → 70 Nm + 180° angular",
+      "unit": "Nm / degrees",
+      "stage": "Multi-stage",
+      "critical": true,
+      "notes": "Torque-to-yield, replace after removal",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 127,
+          "section": "3.2.4"
+        }
+      ]
+    },
+    {
+      "id": "torque-2",
+      "component": "Main Bearing Cap Bolts",
+      "torque": "30 Nm + 60°",
+      "unit": "Nm / degrees",
+      "stage": "Two-stage",
+      "critical": true,
+      "notes": "Apply engine oil to threads",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 134,
+          "section": "3.4.2"
+        }
+      ]
+    },
+    {
+      "id": "torque-3",
+      "component": "Connecting Rod Bolts",
+      "torque": "25 Nm + 70°",
+      "unit": "Nm / degrees",
+      "stage": "Two-stage",
+      "critical": true,
+      "notes": "Replace bolts after each disassembly",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 138,
+          "section": "3.5.1"
+        }
+      ]
+    },
+    {
+      "id": "torque-4",
+      "component": "Oil Pan Bolts M8",
+      "torque": "18 Nm",
+      "unit": "Nm",
+      "stage": "Single",
+      "critical": false,
+      "notes": "Use new gasket",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 142,
+          "section": "3.6.3"
+        }
+      ]
+    },
+    {
+      "id": "torque-5",
+      "component": "Timing Cover Bolts M6",
+      "torque": "10 Nm",
+      "unit": "Nm",
+      "stage": "Single",
+      "critical": false,
+      "notes": "Tighten in cross pattern",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 156,
+          "section": "4.2.1"
+        }
+      ]
+    },
+    {
+      "id": "torque-6",
+      "component": "Camshaft Bearing Cap Bolts",
+      "torque": "12 Nm",
+      "unit": "Nm",
+      "stage": "Single",
+      "critical": true,
+      "notes": "Tighten progressively from center outward",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 162,
+          "section": "4.3.5"
+        }
+      ]
+    },
+    {
+      "id": "torque-7",
+      "component": "Intake Manifold Bolts",
+      "torque": "22 Nm",
+      "unit": "Nm",
+      "stage": "Single",
+      "critical": false,
+      "notes": "Replace gasket",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 178,
+          "section": "5.1.2"
+        }
+      ]
+    },
+    {
+      "id": "torque-8",
+      "component": "Exhaust Manifold Nuts",
+      "torque": "45 Nm",
+      "unit": "Nm",
+      "stage": "Single",
+      "critical": false,
+      "notes": "Check for cracks before installation",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 184,
+          "section": "5.2.4"
+        }
+      ]
+    },
+    {
+      "id": "torque-9",
+      "component": "Turbocharger Mounting Bolts",
+      "torque": "35 Nm",
+      "unit": "Nm",
+      "stage": "Single",
+      "critical": true,
+      "notes": "Use new self-locking nuts",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 192,
+          "section": "5.4.3"
+        }
+      ]
+    },
+    {
+      "id": "torque-10",
+      "component": "Flywheel Bolts",
+      "torque": "80 Nm + 45°",
+      "unit": "Nm / degrees",
+      "stage": "Two-stage",
+      "critical": true,
+      "notes": "Lock flywheel during tightening",
+      "citations": [
+        {
+          "docId": "SM-DEF-2022-PT-001",
+          "page": 198,
+          "section": "6.1.2"
+        }
+      ]
+    }
+  ]
+}
